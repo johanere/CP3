@@ -15,7 +15,7 @@ int main()
 
     // Specify discretization paramters through argsys
     //hent fra argsys <- FIKS
-    int N = 10;
+    int N = 100;
 
 
     // Initializes sun, earth
@@ -45,16 +45,16 @@ int main()
     SunEarth.addObject(sun);
     SunEarth.addObject(earth);
 
-    Solver Sol(SunEarth);
-    //Newsunpos=
+    Solver Sol(SunEarth,force);
+
     //Sol.problem.bodies[0]=()
-    Sol.problem.bodies[0]->printObject();
+    //vec3 newsunpos(1,1,1);
+    int M=20;
+    //Sol.problem.bodies[0]->position=newsunpos;
+    Sol.EulerSolve(M);
 
-    vec3 newsunpos(1,1,1);
-    SunEarth.bodies[0]->position=newsunpos;
-    SunEarth.bodies[0]->printObject();
 
-    cout<<"funker fortsatt"<<endl;
+
 
 /*
     Solver sol(SunEarth); //construct solver (should be *sol= new Solver(SunEarth,N)? )

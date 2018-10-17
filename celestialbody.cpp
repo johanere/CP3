@@ -11,5 +11,5 @@ CelestialBody::CelestialBody(vec3 newPosition, vec3 newVelocity, double newMass,
 
 void CelestialBody::printObject()
 {
-    cout << name << " Position: " << position << " Velocity: " << velocity << endl;
+    cout << name << " Position: " << position << " Velocity: " << velocity << "Force:"<<force <<endl;
 }

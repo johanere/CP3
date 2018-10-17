@@ -1,6 +1,7 @@
 #include "newtoniangravity.h"
 #include <cmath>
 
+
 NewtonianGravity::NewtonianGravity(double G, double sunMass)
 {
     m_G = G;
@@ -12,7 +13,7 @@ void NewtonianGravity::calculateForces(System *system)
 {
      force=4*pi*pi/length(pos)^3*pos (!)
 }*/
-void NewtonianGravity::calculateForces(System *system)
+void NewtonianGravity::calculateForces(System* system)
 {
     /*
      * Takes the system class and calculates forces between the objects

@@ -3,20 +3,22 @@
 
 #include "vec3.h"
 #include "system.h"
+#include "newtoniangravity.h"
 
 class Solver
 {
 private:
-
 public:
     // For now, public variables...
     System problem;
+    NewtonianGravity force;
     // Default, parametrized constructor
-    Solver(System newsystem);
+    Solver(System newsystem,NewtonianGravity newforce);
 
     // Destructor
     ~Solver() {}
 
+    void EulerSolve(int N);
 
 };
 

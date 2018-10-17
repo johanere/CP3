@@ -15,7 +15,7 @@ public:
     NewtonianGravity(double G, double sunMass);
     ~NewtonianGravity() {}
 
-    void calculateForces(System *system);
+    void calculateForces(System* system);
 };
 
 #endif // NEWTONIANGRAVITY_H
