@@ -32,7 +32,7 @@ void NewtonianGravity::calculateForces(System* system)
 
             // Calculates the distance between object i and j
             r_temp = system->bodies[iObj]->position - system->bodies[jObj]->position;
-            r =r_temp.length(); //rewritten from sqrt(r_temp.length())
+            r = sqrt(r_temp.length());
 
             // Sets forces from object j on i
             force_temp = r_temp / (r*r*r) * (-m_G) * (system->bodies[iObj]->mass * system->bodies[jObj]->mass); //removed /m_sunMass <- scaling is done elsewhere

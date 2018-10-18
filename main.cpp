@@ -35,7 +35,6 @@ int main()
 
     double G = 4*M_PI*M_PI;
 
-
     System SunEarth;  //construct system
 
 
@@ -45,13 +44,12 @@ int main()
     SunEarth.addObject(sun);
     SunEarth.addObject(earth);
 
+
+
     Solver Sol(SunEarth,force);
 
-    //Sol.problem.bodies[0]=()
-    //vec3 newsunpos(1,1,1);
-    int M=20;
-    //Sol.problem.bodies[0]->position=newsunpos;
-    Sol.EulerSolve(M);
+
+    Sol.EulerSolve(N);
 
 
 
