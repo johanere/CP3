@@ -2,9 +2,16 @@
 #include "system.h"
 #include "vec3.h"
 
+#include <string>
+#include <fstream>
+#include <iomanip>
+#include <stdlib.h>
+
+using namespace std;
 //construct TBS TwoBodySolver(system,N)
 //har funksjonene EulerSolve og VerletSolve
 //printsolution
+ofstream ofile; //maa inn i loop?
 
 Solver::Solver(System newsystem,NewtonianGravity newforce) : problem(newsystem), force(newforce)
 {
@@ -24,6 +31,30 @@ Solver::Solver(System newsystem,NewtonianGravity newforce) : problem(newsystem),
     void printstep();
     void printend();
 */
+void printstart(int N, int Number_of_Bodies)
+{
+std::string number_of_steps = std::to_string(N);
+std::string number_of_planets = std::to_string(Number_of_Bodies);
+string filename;
+filename = number_of_planets+"_data_"+number_of_steps+".txt";
+ofile.open(filename);
+
+ofile<<setw(15)<<setprecision(8)<<N<<" "<< 0<<" "<<0<<endl;
+ofile<<setw(15)<<setprecision(8)<<Number_of_Bodies<<" "<< 0<<" "<<0<<endl;
+
+}
+
+void printstep(vec3 pos,vec3 vel)
+{
+ofile<<setiosflags(ios::showpoint | ios::uppercase);
+ofile<<setw(15)<<setprecision(8)<<pos[0]<<" "<< pos[1]<<" "<<pos[2]<<endl;
+ofile<<setw(15)<<setprecision(8)<<vel[0]<<" "<< vel[1]<<" "<<vel[2]<<endl;
+}
+
+void printstop()
+{
+ofile.close();
+}
 
 void Solver::EulerSolve(int N)
     {
@@ -35,7 +66,6 @@ void Solver::EulerSolve(int N)
       vec3 f_iplus1[Number_of_Bodies];
 
 
-
       double h, hh;
 
       //Step-Size
@@ -45,7 +75,11 @@ void Solver::EulerSolve(int N)
       //Defining celestial body pointer object
       CelestialBody* obj;
 
-      problem.bodies[1]->printObject();
+      //problem.bodies[1]->printObject();
+
+      //start print
+      printstart(N, Number_of_Bodies);
+
 
       //forces at initial positions, f[0]
       force.calculateForces(&problem);
@@ -53,11 +87,10 @@ void Solver::EulerSolve(int N)
       //Populating initial force
       for(int i = 0; i < Number_of_Bodies; i++)
         {
+          printstep(problem.bodies[i]->position,problem.bodies[i]->velocity);
           f_i[i] = problem.bodies[i]->force;
           cout << "Initial forces" << f_i[i] << endl;
         }
-
-
 
       //ALT SKJER FOR TIDEN
       for(int Time = 0; Time < N; Time++)
@@ -68,7 +101,7 @@ void Solver::EulerSolve(int N)
               obj = problem.bodies[i];  //Objektet earth, sun fra celestial body
 
               obj->position = obj->position +  obj->velocity*h +  f_i[i]*(hh/(2*obj->mass));
-              cout << "New position of " << problem.bodies[1]->position << " equals " << obj->position << endl;
+              //cout << "New position of " << problem.bodies[1]->position << " equals " << obj->position << endl;
 
             }
           problem.resetForces();
@@ -82,9 +115,12 @@ void Solver::EulerSolve(int N)
             obj = problem.bodies[i];  //Objektet earth, sun fra celestial body
             obj->velocity = obj->velocity + ( f_iplus1[i] + f_i[i] ) * (h/(2*obj->mass));
             f_i[i] = f_iplus1[i];
-          }
-        }
+            printstep(obj->position,obj->velocity);
 
+          }
+
+        }
+        printstop();
     }
 /*
         }
