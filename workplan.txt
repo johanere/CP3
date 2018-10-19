@@ -1,24 +1,24 @@
 **** S U N - F I X E D ***
 
-Workplan Algoritmer:
+Workplan Algoritmer: JOHAN fikser
 --------------------
 
 	• Skriv generell two body algoritme (Euler og Verlet).
 	• Skriv generell M-body algoritme (Verlet).
 
-Workplan Euler vs Verlet:
+Workplan Euler vs Verlet: 
 --------------------
 
-For å vurdere stabilitet og runtime ved kjøring Euler og Verlet:
+For å vurdere stabilitet og runtime ved kjøring Euler og Verlet: JOHAN fikser (og legger til funksjonalitet for å ta N som argument i CL)
 	• 		Tabell med ulike N, Runtime, max abs error for 1 år
 	•(*p) Mod nonOO program til å ta command line arg (N) og printe ut max abs error ,runtimes, N.
 	• 		Vurder for hvilke N ulike metoder er stabil. For ulike N kjør bevaringstest for L, U, K med toleranse (setter). Forklar hvorfor forventes bevarte.
 
 
-Produser plott som:
+Produser plott som: Johan
 	• Viser tydelig forskjell på algoritmeimplementasjonene
 
-Diskuter forskjellene mellom Euler og Verlet Algorithme/Metode:
+Diskuter forskjellene mellom Euler og Verlet Algorithme/Metode: Johan
 
 	• Flops
 	• LTE (feilledd)
@@ -33,7 +33,7 @@ Diskuter forskjellene mellom Euler og Verlet Algorithme/Metode implementasjon:
 	• Referer til plott
 	• Konkluder med metode som skal brukes videre
 
-Workplan escape velocity:
+Workplan escape velocity: NOAH fikser
 --------------------
 
 	•	(*p)  Mod nonOO prog til å ha finne escape velocity v_esc (while loop, øke v_0 til avstandstoleranse brytes)
