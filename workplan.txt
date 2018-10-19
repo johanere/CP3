@@ -1,0 +1,140 @@
+**** S U N - F I X E D ***
+
+Workplan Algoritmer:
+	• Skriv generell two body algoritme (Euler og Verlet).
+	• Skriv generell M-body algoritme (Verlet).
+
+Workplan Euler vs Verlet:
+
+For å vurdere stabilitet og runtime ved kjøring Euler og Verlet:
+	• Tabell med ulike N, Runtime, max abs error for 1 år
+	Mod nonOO program til å ta command line arg (N) og printe ut max abs error ,runtimes, N.
+	• Vurder for hvilke N ulike metoder er stabil. For ulike N kjør bevaringstest for L, U, K med toleranse (setter). Forklar hvorfor forventes bevarte.
+
+
+Produser plott som:
+	• Viser tydelig forskjell på algoritmeimplementasjonene
+
+Diskuter forskjellene mellom Euler og Verlet Algorithme/Metode:
+
+	• Flops
+	• LTE (feilledd)
+	• Rekkefølgeavhengighet
+
+
+
+Diskuter forskjellene mellom Euler og Verlet Algorithme/Metode implementasjon:
+	• Runtimes (tabell)
+	• Konklusjon fra metodediskusjon
+	• Stabilitet (lener oss på tabell og illustrasjon)
+	• Referer til plott
+	• Konkluder med metode som skal brukes videre
+
+Workplan escape velocity:
+	• Mod nonOO prog til å ha finne escape velocity v_esc (while loop, øke v_0 til avstandstoleranse brytes)
+	• Skriv analytisk uttrykk for v_esc
+	• Sammenlign numerisk med analytisk
+	• Diskuter eventuelle avvik
+	• Mod videre for justering av G(beta)
+	• Test beta \in (2,3), beta->3
+
+
+Workplan three body system (Jupiter+):
+0:
+	• Forklar at nye parametere for stabilitetsvurdering er energy og momentum bevaring.
+
+1:
+	• Mod OO prog til å ta antall planeter med Command line arg
+	• Sett Jupiter som første objekt jord+1.
+	• Fix sun
+	• Kjør med jupiter masse økt med 10 og deretter 1000.
+	• Mod prog print total energy og angmom for hele systemet ved T=tfinal og T=tnull og noen i mellom, funksjon må være ivaretatt for videre bruk.
+
+2:
+	• Vurder stabilitet Verlet pga three body overgang. (Verlet funker for three body konk) -> kan generaliseres til multibody.
+	• Jordbaneendring
+
+
+**** S U N - N O T - F I X E D ***
+
+
+Workplan Algoritmer:
+	• Skriv generell two body algoritme (Euler og Verlet).
+	• Skriv generell M-body algoritme (Verlet).
+
+Workplan Euler vs Verlet:
+
+For å vurdere stabilitet og runtime ved kjøring Euler og Verlet:
+	• Tabell med ulike N, Runtime, max abs error for 1 år
+	Mod nonOO program til å ta command line arg (N) og printe ut max abs error ,runtimes, N.
+	• Vurder for hvilke N ulike metoder er stabil. For ulike N kjør bevaringstest for L, U, K med toleranse (setter). Forklar hvorfor forventes bevarte.
+
+
+Produser plott som:
+	• Viser tydelig forskjell på algoritmeimplementasjonene
+
+Diskuter forskjellene mellom Euler og Verlet Algorithme/Metode:
+
+	• Flops
+	• LTE (feilledd)
+	• Rekkefølgeavhengighet
+
+
+
+Diskuter forskjellene mellom Euler og Verlet Algorithme/Metode implementasjon:
+	• Runtimes (tabell)
+	• Konklusjon fra metodediskusjon
+	• Stabilitet (lener oss på tabell og illustrasjon)
+	• Referer til plott
+	• Konkluder med metode som skal brukes videre
+
+Workplan escape velocity:
+	• Mod nonOO prog til å ha finne escape velocity v_esc (while loop, øke v_0 til avstandstoleranse brytes)
+	• Skriv analytisk uttrykk for v_esc
+	• Sammenlign numerisk med analytisk
+	• Diskuter eventuelle avvik
+	• Mod videre for justering av G(beta)
+	• Test beta \in (2,3), beta->3
+
+
+Workplan three body system (Jupiter+):
+0:
+	• Forklar at nye parametere for stabilitetsvurdering er energy og momentum bevaring.
+
+1:
+	• Mod OO prog til å ta antall planeter med Command line arg
+	• Sett Jupiter som første objekt jord+1.
+	• Fix sun
+	• Kjør med jupiter masse økt med 10 og deretter 1000.
+	• Mod prog print total energy og angmom for hele systemet ved T=tfinal og T=tnull og noen i mellom, funksjon må være ivaretatt for videre bruk.
+
+2:
+	• Vurder stabilitet Verlet pga three body overgang. (Verlet funker for three body konk) -> kan generaliseres til multibody.
+	• Jordbaneendring
+
+Workplan Multibody overgang:
+
+0:
+	• I metode, beskriv overgang til multibody, ta med konklusjon fra three body.
+	• Introduser barycenter og beskriv NASA-data.
+	• Beskriv total angulær momentum.(barycenter er origo)
+
+1:
+
+	• Mod progr OO til sun-earth til å kunne sammenligne total momentum før og etter simulering. Skal være null.
+
+2:
+	• Sammenlign ES med ESJ, baneplott for begge.
+	• Diskuter ulikheter.
+
+Workplan Merkur (Merkur Sol system):
+
+0:
+	• Aphelion/Perihelion beskrive ( og vinkel perihelion)
+	• Forklar generell relativitet ledd i kraft.
+
+1:
+	• Mod OO for å skrive ut Perihelion ved hvert år.
+	• Kjør OO med sol-merkur for tf = 100år og ekstraher plott ved perihelion.
+	• Legg til ny kraft med relativistisk endring.
+	• Kjør på nytt.
