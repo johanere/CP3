@@ -9,6 +9,11 @@ In Introduction:
     Tools used (when critical in order to reproduce results): for example c++ with armadillo, and why this tool is used (c++ for optimiation and minimizing cycles)
     Motivation: Why is the report covering what it is? 
     
+    Ligninger etter tekst.
+In methods:
+  Under kodeimplementasjon - gi detaljer om innledende tester av algoritme: gir den riktige svar? 
+  Catch for å iverate integritet
+
 In conclusions:
   Future prospects: due to the following discrepencies, example "not checking conservaton o momentum", further testnig should b done implementing "some test".
   
