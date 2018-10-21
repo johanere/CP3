@@ -15,7 +15,6 @@ int main(int argc, char * argv[])
 {
 
     // Specify discretization paramters through argsys
-    //hent fra argsys <- FIKS
     int N = std::stoi(argv[1]);
     int printstep = std::stoi(argv[2]);
     int T = std::stoi(argv[3]);
@@ -52,10 +51,9 @@ int main(int argc, char * argv[])
 
     NewtonianGravity force(G, massSun);  //specify force
 
-    //add objects to system class
     SunEarth.addObject(sun);
     SunEarth.addObject(earth);
-    SunEarth.addObject(mars);
+    //SunEarth.addObject(mars);
 
 
     Solver Sol(SunEarth,force);

@@ -16,22 +16,23 @@ Solver::Solver(System newsystem,NewtonianGravity newforce) : problem(newsystem),
 }
 
 //-------------functions-----------
-void printstart(int N, int Number_of_Bodies,int printstep) // run once when solving, prints paramters for solving
+void printstart(int N, int Number_of_Bodies,int printstep,int T) // run once when solving, prints paramters for solving
 {
-std::string number_of_steps = std::to_string(N);
+std::string number_of_steps_per_yr = std::to_string(N);
+std::string T_tot = std::to_string(T);
 std::string number_of_planets = std::to_string(Number_of_Bodies);
 string filename;
-filename = number_of_planets+"_data_"+number_of_steps+".txt";
+filename = number_of_planets+"planets_"+number_of_steps_per_yr+"stepspryr_"+T_tot+"yrs.txt";
 ofile.open(filename);
 
-ofile<<setw(15)<<setprecision(8)<<N<<" "<< printstep<<" "<<Number_of_Bodies<<" "<< 0<<" "<<0<<" "<<0<<" "<<0<<" "<<0<<" "<<0<<" "<<0<<endl;
+ofile<<setw(15)<<setprecision(8)<<N<<" "<< printstep<<" "<<Number_of_Bodies<<" "<< T<<" "<<0<<" "<<0<<" "<<0<<" "<<0<<" "<<0<<" "<<0<<endl;
 }
 
 void printcurrent(double t,vec3 pos,vec3 vel, double m) //run at a given number of steps, prints current values
 {
 ofile<<setiosflags(ios::showpoint | ios::uppercase);
 //finding angular momentum
-vec3 L(pos[1]*vel[2]-pos[2]*vel[2],pos[2]*vel[0]-pos[0]*vel[2],pos[0]*vel[1]-pos[1]*vel[0]);
+vec3 L(pos[1]*vel[2]-pos[2]*vel[1],pos[2]*vel[0]-pos[0]*vel[2],pos[0]*vel[1]-pos[1]*vel[0]);
 L=L*m;
 //writing in file
 ofile<<setw(15)<<setprecision(8)<<t<<" "<<pos[0]<<" "<< pos[1]<<" "<<pos[2]<<" "<<vel[0]<<" "<< vel[1]<<" "<<vel[2]<<" "<<L[0]<<" "<< L[1]<<" "<<L[2]<<endl;
@@ -58,10 +59,11 @@ void Solver::EulerSolve(int T, int N, int printstep)
       h=(double) 1/(N-1);
       hh=h*h;
 
+
       //start print
       if(printstep<=N)
       {
-      printstart(N, Number_of_Bodies,printstep);
+      printstart(N, Number_of_Bodies,printstep,T);
       }
       else
       {
@@ -83,9 +85,12 @@ void Solver::EulerSolve(int T, int N, int printstep)
         }
 
       //Iterate, through t_1, t_2,...t_n-1, while printing time, position, velocity
-      for(int step = 0; step < N-1; step++)
-        {
 
+      for(int yr=0;yr<T;yr++)
+      {
+
+      for(int step = 0; step < (N-1); step++)
+        {
           for(int i = 0; i < Number_of_Bodies; i++)
             {
               obj = problem.bodies[i];  //set obj
@@ -108,10 +113,9 @@ void Solver::EulerSolve(int T, int N, int printstep)
 
             if((step+1)%printstep == 0) //check printperiod
             {
-            printcurrent((step+1)*h,obj->position,obj->velocity,obj->mass);
+            printcurrent(yr+(step+1)*h,obj->position,obj->velocity,obj->mass);
             }
           }
-
         if(step == N-2&&(step+1)%printstep != 0) //check that printstep covers T final
         {
           cout<<"Did not print T final! - please adjust printstep"<<endl;
@@ -120,6 +124,8 @@ void Solver::EulerSolve(int T, int N, int printstep)
         }
         if(printstep<=N)
         {
-        printstop();
+
         }
+      }
+      printstop();
     }
