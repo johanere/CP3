@@ -1,4 +1,4 @@
-void GravitationalForce::calculateForcesEinsteinian(System* system)
+void NewtonianGravity::calculateForces(System* system)
   {
     /*
     Takes a system object and calculates the einsteinian gravitational force
@@ -35,7 +35,7 @@ void GravitationalForce::calculateForcesEinsteinian(System* system)
 
     ll = rxv.lengthSquared();
 
-    /*Updating force on Merury*/
+    /* Updating force */
     system->bodies[1]->force = r_temp * (((m_G * mass)/r_cubed) * (1.0 + (3.0*ll)/(rr*c*c) ));
 
   }
