@@ -88,3 +88,5 @@ Diskusjon
 3.
 - Ser plottet ut som forventa? Noen planeter ikke fullført bane -> de bruker lengre tid enn 1 yr!
 - Stabilitetssjekk: Angmom bevart ved en viss N med lik nøyaktighet som før?
+
+4. beskriv avviket på vinkel. Er det viktig å ta med generell relativitet?
