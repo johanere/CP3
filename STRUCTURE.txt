@@ -3,6 +3,7 @@ I Intro: all data er henta fra NASA, med dato: posisjoner 20.oktober 2017 (for �
 
 1. Finn metode for simulering (Sun/Earth)
 2. Implementer generell M-body algoritme (solsystemet)
+3. Simuler hele solsystemet
 
 1:
   1.1 Beskriv de numerisk prosedyrene (generelt):
@@ -37,6 +38,11 @@ I Intro: all data er henta fra NASA, med dato: posisjoner 20.oktober 2017 (for �
   2.1 Overgang multibody. Beskriv å ta med jupiter (nasa-data) . Gjenta at stabilitetsvurdering er bevaring av momentum. SJekk Verlet stabilitet for 3 objects.
   - Kjør jupiter med 10 og 1000 ganger masse, for å se at jordas bane (og solas) blir i økende grav påvirka (hva som forventes).
   
+  3. Vet at Verlet funker for 3 bodies. Simulerer nå hele solsystemet.
+  - Beskriv Barysenter
+  - Gjenta data fra NASA
+  - Beskriv total ang. mom med barycenter som origo
+  
 Resultater:
 1.1 Initiell sjekk av at simuleringa fungerer som forventa: plot med sol jord, se at sirukær bane. 
     - Kommenter: hva ser vi her?
@@ -53,6 +59,12 @@ Resultater:
 
 2.1 -For en N som tidligere har vært stabil - presenter momentumbevaring. Samme toleranse? Må vi øke N for samme stabilitet?
     - plot for jupmassse x10 og x1000
+   
+3.
+- Plot over solsystemet for ett år <- simuleringa fungerer som forventa
+- Stabilitetssjekk: Angmom bevart? 
+
+
 Diskusjon
 1.1 Ser ut til at simuleringa fungerer
 1.2 Verlet er bedre
