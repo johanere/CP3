@@ -14,7 +14,7 @@ I Intro: all data er henta fra NASA, med dato: posisjoner 20.oktober 2017 (for �
                                                           
   1.2 Beskrive systemet vi tester på <- (Sun Earth)
    - Ligninger
-   - Skalere (skaleringsmetoden brukes i resten av prosjektet også)
+   - Skalere (skaleringsmetoden brukes i resten av prosjektet også) 1 yr diskretiseres, og er standard tid for plotting
    - Diskretisering (Diskretiseringsmetoden brukes i resten av prosjektet også)
    - Algoritmene implementert for dette systemet: sun fixed, sirkulær orbit,
    
@@ -74,3 +74,7 @@ Diskusjon
 2.1 
 -Verlet funker med 3 bodies
 - se at jordas bane (og solas) blir i økende grav påvirka.
+
+3.
+- Ser plottet ut som forventa? Noen planeter ikke fullført bane -> de bruker lengre tid enn 1 yr!
+- Stabilitetssjekk: Angmom bevart ved en viss N med lik nøyaktighet som før?
