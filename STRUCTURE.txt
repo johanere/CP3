@@ -1,1 +1,6 @@
-ORK LORK
+Methods:
+  *Verlet > Euler: 
+   Beskrive systemet vi tester på <- (Sun Earth)
+   -Ligninger
+   -Skalere (skaleringsmetoden brukes i resten av prosjektet også)
+   -Diskretisering (Diskretiseringsmetoden brukes i resten av prosjektet også)
