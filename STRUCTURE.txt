@@ -19,7 +19,11 @@
   - stabilitet (analytisk løsning (sirkulær bane) 
   - hurtighet (runtime) innledningsvis. 
   - energibevaring og angulærmoment (forklar hvorfor viktig) og hvorfor vi tar det med: letter når flere bodies. 
-
+  - Som beskrevet i diskusjon, brukes Verlet videre. For kontroll av Verlet sjekkes v_esc
+  
+  1.4 V_esc - For kontroll av Verlet sjekkes v_esc
+  - Beskrive analytisk uttrykk 
+  - I tillegg undersøkes konsekvense (brief) av at tyngdekrafta er noe anederledes: beta->(2,3)
 
 
 Resultater:
