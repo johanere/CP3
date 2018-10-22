@@ -40,7 +40,7 @@ I Intro: all data er henta fra NASA, med dato: posisjoner 20.oktober 2017 (for �
   - Plot for jupiter - se at jordas bane blir påvirka 
   - Kjør jupiter med 10 og 1000 ganger masse, for å se at jordas bane (og solas) blir i økende grav påvirka (hva som forventes).
   
-  3. Vet at Verlet funker for 3 bodies. Simulerer nå hele solsystemet.
+  3. Vet at Verlet funker for 3 bodies. Simulerer nå hele solsystemet. (sol flytende)
   - Beskriv Barysenter
   - Gjenta data fra NASA
   - Beskriv total ang. mom med barycenter som origo
