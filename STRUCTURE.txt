@@ -25,4 +25,4 @@
 Resultater:
 1.1 Initiell sjekk av at simuleringa fungerer som forventa: plot med sol jord, se at sirukær bane.
 1.2 Tabell (ved sirkulær bane, to object, sun fixed) Euler og Verlet:
-    - N, Runtime, max abs error for 1 år, største avvik fra E_tot og angmom_tot ved T_0. 
+    - N, Runtime, max abs error for 1 år, største avvik energi avvik fra energi ved t_0, og tilsv for angmom_tot 
