@@ -1,6 +1,6 @@
 Methods:
 
-  Valg av numerisk prosedyre for bruk i simulering av solsystemet:
+  Valg av numerisk prosedyre for bruk i simulering av solsystemet (generelt for multi body system):
   - Beskrive de to metodene
   - Algoritmeutvikling
   
