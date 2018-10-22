@@ -16,3 +16,8 @@
    
   1.3 Evaluering av implementasjon 
   Sun/Earth - sun fixed, og vurderes etter følgende parametre: stabilitet (sirkulær orbit) - sammenligne med analytisk. Energibevarin
+
+
+
+Resultater:
+1. Tabell med ulike N, Runtime, max abs error for 1 år
