@@ -19,16 +19,19 @@
   - stabilitet (analytisk løsning (sirkulær bane) 
   - hurtighet (runtime) innledningsvis. 
   - energibevaring og angulærmoment (forklar hvorfor viktig) og hvorfor vi tar det med: letter når flere bodies. 
-  - Som beskrevet i diskusjon, brukes Verlet videre. For kontroll av Verlet sjekkes v_esc
- 
+  - Som beskrevet i diskusjon, brukes Verlet videre. For kontroll av Verlet sjekkes v_es
+  
  -----KUN VERLET HERFRA -------
+  
+  !!! Overgang til OO: hvorfor + sjekk at det blir det samme for fixed sun og earth som forrige program 
+ 
   1.4 V_esc - For kontroll av Verlet sjekkes v_esc
   - Beskrive analytisk uttrykk 
   - Ved trial and error: sett v_0 til analytisk, og plot bane. Så, finn v_esc ved trial and error.
   
   1.5 (Tyngekrafta) Kort om konsekvensene av å modifisere tyngekrafta, beta->[2,3]
 
-
+  2.1 Sun fortsatt fixed (fiks i programmet)
 Resultater:
 1.1 Initiell sjekk av at simuleringa fungerer som forventa: plot med sol jord, se at sirukær bane. 
     - Kommenter: hva ser vi her?
@@ -37,6 +40,8 @@ Resultater:
     - Kommenter: hva ser vi her?
     
  -----KUN VERLET HERFRA -------
+
+!!! Plot med sol og jord, sun fixed som viser at simuleringa fortsatt fungerer
  
 1.3 (V_esc) Presenter plot med analytisk v_esc. Deretter v_esc ved trial and error. Kommenter forskjell (høyere eller lavere enn analytisk?)
 1.4 (Tyngekrafta)  Multiplot med bane for sol jord med ulike beta
