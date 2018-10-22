@@ -15,9 +15,13 @@
    - Algoritmene implementert for dette systemet: sun fixed, sirkulær orbit,
    
   1.3 Evaluering av implementasjon 
-  Sun/Earth - sun fixed, og vurderes etter følgende parametre: stabilitet (vs analytisk og bevaring av energi) og hurtighet (runtime)
-  - Beskriv bevaring av energi
+  Sun/Earth - Vurderes etter følgende parametre: 
+  - stabilitet (analytisk løsning (sirkulær bane) 
+  - hurtighet (runtime) innledningsvis. 
+  - energibevaring og angulærmoment (forklar hvorfor viktig) og hvorfor vi tar det med: letter når flere bodies. 
+
 
 
 Resultater:
-1. Tabell med ulike N, Runtime, max abs error for 1 år
+1. Tabell (ved sirkulær bane, to object, sun fixed) Euler og Verlet:
+    - N, Runtime, max abs error for 1 år, største avvik fra E_tot og angmom_tot ved T_0. 
