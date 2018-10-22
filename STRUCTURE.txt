@@ -3,7 +3,7 @@ Methods:
   Valg av numerisk prosedyre for bruk i simulering av solsystemet (generelt for multi body system):
   - Beskrive de to metodene
   - Algoritmeutvikling
-  - Evalueringsparametre: algoritmen testes med Sun/Earth, og vurderes etter følgende parametre: stabilitet (sirkulær orbit)
+  - Evalueringsparametre: algoritmen testes med Sun/Earth - sun fixed, og vurderes etter følgende parametre: stabilitet (sirkulær orbit) - sammenligne med analytisk. 
                                                           
   
   Beskrive systemet vi tester på <- (Sun Earth)
