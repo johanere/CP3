@@ -16,14 +16,6 @@ double massSun = 2e30;
 double massEarth = 6e24/massSun;  //Mass of Earth in solar masses
 double GM_O = 4.0*pi*pi;
 
-void printstart(int N, int printstep, int T) // run once when solving, prints paramters for solving
-{
-ofile.open(filename);
-
-ofile<< N <<" "<< printstep<<" "<<Number_of_Bodies<<" "<< T<<" "<<0<<" "<<0<<" "<<0<<" "<<0<<" "<<0<<" "<<0<<endl;
-}
-
-
 double Force_Earth(double dim, double r_cubed_current);
 double AngularMomentum(double rx, double ry, double mass, double vx, double vy);
 double TotalEnergy(double mass, double rx, double ry, double vx, double vy);
@@ -35,6 +27,7 @@ int main(int argc, char * argv[])
   {
     /*Discretization parameters*/
     int N = atoi(argv[1]);        //Number of integration points
+    int printstep = atoi(argv[2]);        //Number of integration points
 //    double eps = atof(argv[2]);
     double t_max = 1.0;    //Solve for 1 year
     double t_min = 0.0;    //Initial time
@@ -69,9 +62,12 @@ int main(int argc, char * argv[])
 
     double r_x_previous, r_y_previous, v_x_previous, v_y_previous;
 
+    if(printstep<=N)
+    {
     ofstream outfile;
     outfile.open("EarthSunPositionsEulerMethod.dat");
     outfile << Earth_x0 << " " << Earth_y0 << " " << Earth_L << " " << Earth_E << endl;
+    }
 
     /*Current values of angular momentum, potential and kinetic energy */
     double L_curr, E_curr;
@@ -100,18 +96,20 @@ int main(int argc, char * argv[])
             /*Test failed*/
     //        break;
     //      }
-
-        outfile << r[0] << " " << r[1] << " " << L_curr << " " << E_curr << endl;
-
-
+        if((i)%printstep == 0) //check printperiod
+        {
+          outfile << r[0] << " " << r[1] << " " << L_curr << " " << E_curr << endl;
+        }
       }
 
     auto stop1 = chrono::high_resolution_clock::now(); //Timing stop
     auto diff1 = stop1-start1;
     cout  << "N=" << N << " Runtime of Forward-Euler algorithm = " << chrono::duration <double,milli> (diff1).count() << "ms" << endl;
 
-    outfile.close();
-
+    if(printstep<=N)
+    {
+      outfile.close();
+    }
     /*Reseting intitial conditions*/
     r[0] = Earth_x0;
     r[1] = Earth_y0;
