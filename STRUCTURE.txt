@@ -1,5 +1,5 @@
 1. Finn metode for simulering (Sun/Earth)
-
+2. Implementer generell M-body algoritme (solsystemet)
 
 1:
   1.1 Beskriv de numerisk prosedyrene (generelt):
