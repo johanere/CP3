@@ -20,12 +20,13 @@
   - hurtighet (runtime) innledningsvis. 
   - energibevaring og angulærmoment (forklar hvorfor viktig) og hvorfor vi tar det med: letter når flere bodies. 
   - Som beskrevet i diskusjon, brukes Verlet videre. For kontroll av Verlet sjekkes v_esc
-  
+ 
+ -----KUN VERLET HERFRA -------
   1.4 V_esc - For kontroll av Verlet sjekkes v_esc
   - Beskrive analytisk uttrykk 
   - Ved trial and error: sett v_0 til analytisk, og plot bane. Så, finn v_esc ved trial and error.
   
-  1.5 Tyngekrafta
+  1.5 Kort om konsekvensene av å modifisere tyngekrafta, beta->[2,3]
 
 
 Resultater:
@@ -34,9 +35,14 @@ Resultater:
 1.2 Tabell (ved sirkulær bane, to object, sun fixed) Euler og Verlet:
     - N, Runtime, max abs error for 1 år, største avvik energi avvik fra energi ved t_0, og tilsv for angmom_tot 
     - Kommenter: hva ser vi her?
-1.3 Presenter plot med analytisk v_esc. Deretter v_esc ved trial and error. Kommenter forskjell (høyere eller lavere enn analytisk?)
     
+ -----KUN VERLET HERFRA -------
+ 
+1.3 Presenter plot med analytisk v_esc. Deretter v_esc ved trial and error. Kommenter forskjell (høyere eller lavere enn analytisk?)
+1.4 Multiplot med bane for sol jord med ulike beta
+
 Diskusjon
 1.1 Ser ut til at simuleringa fungerer
 1.2 Verlet er bedre
+ -----KUN VERLET HERFRA -------
 1.3 Er det en sammenheng med hva vi så på energibevaring elns?
