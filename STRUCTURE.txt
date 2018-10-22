@@ -11,5 +11,6 @@
    -Ligninger
    -Skalere (skaleringsmetoden brukes i resten av prosjektet også)
    -Diskretisering (Diskretiseringsmetoden brukes i resten av prosjektet også)
+   
   1.3 Evaluering av algoritmer
   Sun/Earth - sun fixed, og vurderes etter følgende parametre: stabilitet (sirkulær orbit) - sammenligne med analytisk. Energibevarin
