@@ -4,6 +4,7 @@ I Intro: all data er henta fra NASA, med dato: posisjoner 20.oktober 2017 (for �
 1. Finn metode for simulering (Sun/Earth)
 2. Implementer generell M-body algoritme (solsystemet)
 3. Simuler hele solsystemet
+4. Hva med relativitet?
 
 1:
   1.1 Beskriv de numerisk prosedyrene (generelt):
@@ -43,7 +44,11 @@ I Intro: all data er henta fra NASA, med dato: posisjoner 20.oktober 2017 (for �
   - Beskriv Barysenter
   - Gjenta data fra NASA
   - Beskriv total ang. mom med barycenter som origo
-  
+ 
+ 4. Kjør Sol og merkur
+- Aphelion/Perihelion beskrive ( og vinkel perihelion)
+- Forklar generell relativitet ledd i kraft
+
 Resultater:
 1.1 Initiell sjekk av at simuleringa fungerer som forventa: plot med sol jord, se at sirukær bane. 
     - Kommenter: hva ser vi her?
@@ -66,6 +71,9 @@ Resultater:
 - Plot over solsystemet for ett år <- simuleringa fungerer som forventa
 - Stabilitetssjekk: Angmom bevart? 
 
+4. Kjør Sol (flytende sol) og merkur 
+- finn vinkel etter 100 år med newtonsk
+- finn vinkel etter 100 år med generell relativitet
 
 Diskusjon
 1.1 Ser ut til at simuleringa fungerer
