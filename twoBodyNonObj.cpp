@@ -4,6 +4,7 @@
 #include <string>
 #include <chrono>
 #include <ratio>
+#include <cstdlib>
 #include <ctime>
 
 using namespace std;
@@ -15,25 +16,31 @@ double massSun = 2e30;
 double massEarth = 6e24/massSun;  //Mass of Earth in solar masses
 double GM_O = 4.0*pi*pi;
 
+void printstart(int N, int printstep, int T) // run once when solving, prints paramters for solving
+{
+ofile.open(filename);
+
+ofile<< N <<" "<< printstep<<" "<<Number_of_Bodies<<" "<< T<<" "<<0<<" "<<0<<" "<<0<<" "<<0<<" "<<0<<" "<<0<<endl;
+}
+
+
 double Force_Earth(double dim, double r_cubed_current);
-double AngularMomentum_Earth(double rx, double ry, double mass, double vx, double vy);
-double PotentialEnergy_Earth(double mass, double rx, double ry);
-double KineticEnergy_Earth(double mass, double vx, double vy);
-void printEarthAttributes(double L, double U, double K);
-bool checkConvervation(double L, double U, double K, double L_init, double U_init, double K_init);
+double AngularMomentum(double rx, double ry, double mass, double vx, double vy);
+double TotalEnergy(double mass, double rx, double ry, double vx, double vy);
+void printEarthAttributes(double L, double E);
+bool checkConvervation(double L, double E, double L_init, double E_init, double eps);
 
 
-int main()
+int main(int argc, char * argv[])
   {
     /*Discretization parameters*/
-    int N = 100000;        //Number of integration points
+    int N = atoi(argv[1]);        //Number of integration points
+//    double eps = atof(argv[2]);
     double t_max = 1.0;    //Solve for 1 year
     double t_min = 0.0;    //Initial time
     double h = (t_max - t_min)/N;   //Step-Size
     double hh = h*h;
     int dimension = 2;  //Solving in two dimensions
-
-
 
     /*Settin initial conditions*/
     double Earth_x0, Earth_y0, Earth_v_x0, Earth_v_y0, r_cubed_old, r_cubed_new;
@@ -52,11 +59,10 @@ int main()
     v[0] = Earth_v_x0;
     v[1] = Earth_v_y0;
 
-    /*Earth angular momentum, potential and kinetic energy*/
-    double Earth_L, Earth_U, Earth_K;
-    Earth_L = AngularMomentum_Earth(r[0], r[1], massEarth, v[0], v[1]);
-    Earth_U = PotentialEnergy_Earth(massEarth, r[0], r[1]);
-    Earth_K = KineticEnergy_Earth(massEarth, v[0], v[1]);
+    /*Earth angular momentum and total energy*/
+    double Earth_L, Earth_E;
+    Earth_L = AngularMomentum(r[0], r[1], massEarth, v[0], v[1]);
+    Earth_E = TotalEnergy(massEarth, r[0], r[1], v[0], v[1]);
 
     /*Euler's method*/
     auto start1 = chrono::high_resolution_clock::now();  //Timing start
@@ -65,10 +71,10 @@ int main()
 
     ofstream outfile;
     outfile.open("EarthSunPositionsEulerMethod.dat");
-    outfile << Earth_x0 << " " << Earth_y0 << endl;
+    outfile << Earth_x0 << " " << Earth_y0 << " " << Earth_L << " " << Earth_E << endl;
 
     /*Current values of angular momentum, potential and kinetic energy */
-    double L_curr, U_curr, K_curr;
+    double L_curr, E_curr;
 
     for(int i = 1; i < N; i++)
       {
@@ -85,19 +91,18 @@ int main()
         v[0] = v_x_previous - h*Force_Earth(r_x_previous, r_cubed_old)/massEarth;
         v[1] = v_y_previous - h*Force_Earth(r_y_previous, r_cubed_old)/massEarth;
 
-        outfile << r[0] << " " << r[1] << endl;
+        L_curr = AngularMomentum(r[0], r[1], massEarth, v[0], v[1]);
+        E_curr = TotalEnergy(massEarth, r[0], r[1], v[0], v[1]);
 
         /*Test conservation of angular momentum, potential and kinetic energy */
-        L_curr = AngularMomentum_Earth(r[0], r[1], massEarth, v[0], v[1]);
-        U_curr = PotentialEnergy_Earth(massEarth, r[0], r[1]);
-        K_curr = KineticEnergy_Earth(massEarth, v[0], v[1]);
-
-
-        if(checkConvervation(L_curr, U_curr, K_curr, Earth_L, Earth_U, Earth_K) == 0)
-          {
+//        if(checkConvervation(L_curr, E_curr, Earth_L, Earth_E, eps) == 0)
+  //        {
             /*Test failed*/
-            break;
-          }
+    //        break;
+    //      }
+
+        outfile << r[0] << " " << r[1] << " " << L_curr << " " << E_curr << endl;
+
 
       }
 
@@ -117,7 +122,8 @@ int main()
     auto start2 = chrono::high_resolution_clock::now();  //Timing start
 
     outfile.open("EarthSunPositionsVerletMethod.dat");
-    outfile << Earth_x0 << " " << Earth_y0 << endl;
+    outfile << Earth_x0 << " " << Earth_y0 << " " << Earth_L << " " << Earth_E << endl;
+
     for(int i = 0; i < N; i++)
       {
         r_cubed_old = (r[0]*r[0] + r[1]*r[1])*sqrt(r[0]*r[0] + r[1]*r[1]);
@@ -134,7 +140,12 @@ int main()
 
         v[0] = v_x_previous - 0.5*h*( Force_Earth( r[0], r_cubed_new ) + Force_Earth( r_x_previous, r_cubed_old ) )/massEarth;
         v[1] = v_y_previous - 0.5*h*( Force_Earth( r[1], r_cubed_new ) + Force_Earth( r_y_previous, r_cubed_old ) )/massEarth;
-        outfile << r[0] << " " << r[1] << endl;
+
+        //Computing angular momentum and total energy
+        L_curr = AngularMomentum(r[0], r[1], massEarth, v[0], v[1]);
+        E_curr = TotalEnergy(massEarth, r[0], r[1], v[0], v[1]);
+
+        outfile << r[0] << " " << r[1] << " " << L_curr << " " << E_curr << endl;
 
       }
 
@@ -150,7 +161,7 @@ double Force_Earth(double dim, double r_cubed_current)
     {
       return GM_O*massEarth*(dim/r_cubed_current);
     }
-double AngularMomentum_Earth(double rx, double ry, double mass, double vx, double vy)
+double AngularMomentum(double rx, double ry, double mass, double vx, double vy)
     {
       double L, r, v, m;
       r = sqrt( rx*rx + ry*ry );
@@ -159,40 +170,34 @@ double AngularMomentum_Earth(double rx, double ry, double mass, double vx, doubl
       L = r*m*v;
       return L;
     }
-double PotentialEnergy_Earth(double mass, double rx, double ry)
-    {
-      double U;
-      U = -4*pi*pi*( mass / sqrt( rx*rx + ry*ry) );
-    }
-double KineticEnergy_Earth(double mass, double vx, double vy)
-    {
-      double K;
-      K = 0.5*mass*( vx*vx + vy*vy );
-    }
-void printEarthAttributes(double L, double U, double K)
+double TotalEnergy(double mass, double rx, double ry, double vx, double vy)
+  {
+    double U, K, E; //U: potential, K: kinetic, E: total energy
+    U = -4*pi*pi*( mass / sqrt( rx*rx + ry*ry) );
+    K = 0.5*mass*( vx*vx + vy*vy );
+    E = U + K;
+    return E;
+  }
+void printEarthAttributes(double L, double E)
       {
         cout << "--------------------------" << endl;
         cout << "|    Earth Attributes    |" << endl;
         cout << "--------------------------" << endl;
         cout << "Angular Momemntum = " << L << " Js" << endl;
-        cout << "Potential Energy  = " << U << " J"  << endl;
-        cout << "Kinetic Energy    = " << K << " J"  << endl;
+        cout << "Total Energy  = " << E << " J"  << endl;
         cout << "--------------------------" << endl;
       }
-bool checkConvervation(double L, double U, double K, double L_init, double U_init, double K_init)
+bool checkConvervation(double L, double E, double L_init, double E_init, double eps)
         {
-          double eps = 1.e-7;
-          double diff_L, diff_U, diff_K;
+          double diff_L, diff_E;
           diff_L = L - L_init;
-          diff_U = U - U_init;
-          diff_K = K - K_init;
+          diff_E = E - E_init;
 
-          bool L_check, U_check, K_check;
+          bool L_check, E_check;
           L_check = fabs(diff_L) > eps;
-          U_check = fabs(diff_U) > eps;
-          K_check = fabs(diff_K) > eps;
+          E_check = fabs(diff_E) > eps;
 
-          if( L_check == 1  || U_check == 1 || K_check == 1)
+          if( L_check == 1  || E_check == 1)
             {
               cout << "    Convervation test failed!   "  << endl;
               cout << "---------------------------------------"  << endl;
@@ -200,9 +205,7 @@ bool checkConvervation(double L, double U, double K, double L_init, double U_ini
               cout << "---------------------------------------"  << endl;
               cout << "|  L  |   "<<L_init<<"   | " << L << " |" << endl;
               cout << "---------------------------------------"  << endl;
-              cout << "|  U  |   "<<U_init<<"  | " << U << " |" <<endl;
-              cout << "---------------------------------------"  << endl;
-              cout << "|  K  |   "<<K_init<<"   | " << K << " |" <<endl;
+              cout << "|  E  |   "<<E_init<<"  | " << E << " |" <<endl;
               cout << "---------------------------------------" << endl;
 
               return 0>2;
