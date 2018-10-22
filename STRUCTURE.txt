@@ -35,7 +35,7 @@ I Intro: all data er henta fra NASA, med dato: posisjoner 20.oktober 2017 (for �
   1.5 (Tyngekrafta) Kort om konsekvensene av å modifisere tyngekrafta, beta->[2,3]
 
   2.1 Overgang multibody. Beskriv å ta med jupiter (nasa-data) . Gjenta at stabilitetsvurdering er bevaring av momentum. SJekk Verlet stabilitet for 3 objects.
-  - Kjør jupiter med 10 og 1000 ganger masse, for å se at jordas bane (og solas) blir i økende grav påvirka.
+  - Kjør jupiter med 10 og 1000 ganger masse, for å se at jordas bane (og solas) blir i økende grav påvirka (hva som forventes).
   
 Resultater:
 1.1 Initiell sjekk av at simuleringa fungerer som forventa: plot med sol jord, se at sirukær bane. 
