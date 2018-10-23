@@ -78,7 +78,7 @@ void Solver::EulerSolve(int T, int N, int printstep)
         {
           if(printstep<=N)        //check print condition
           {
-          printcurrent(0,problem.bodies[i]->position,problem.bodies[i]->velocity,obj->mass);
+          printcurrent(0,problem.bodies[i]->position,problem.bodies[i]->velocity,problem.bodies[i]->mass);
           }
           f_i[i] = problem.bodies[i]->force;
 
