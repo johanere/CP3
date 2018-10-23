@@ -1,8 +1,11 @@
 import numpy as np
+import sys
 import matplotlib.pyplot as plt
 
 filename1 = "EarthSunPositionsEulerMethod.dat"
 filename2 = "EarthSunPositionsVerletMethod.dat"
+
+printstep = float(sys.argv[1])
 
 data1 = np.loadtxt(filename1, unpack=True)
 data2 = np.loadtxt(filename2, unpack=True)
@@ -21,18 +24,13 @@ E_euler = data1[3][1:]
 L_verlet = data2[2][1:]
 E_verlet = data2[3][1:]
 
-max_dev_L_euler_ind = np.argmax(abs(L_init_euler - L_euler))
-max_dev_E_euler_ind = np.argmax(abs(E_init_euler - E_euler))
-max_dev_L_verlet_ind = np.argmax(abs(L_init_verlet - L_verlet))
-max_dev_E_verlet_ind = np.argmax(abs(E_init_verlet - E_verlet))
-
-max_dev_L_euler = L_euler[max_dev_L_euler_ind]
-max_dev_E_euler = E_euler[max_dev_E_euler_ind]
-max_dev_L_verlet = L_verlet[max_dev_L_verlet_ind]
-max_dev_E_verlet = E_verlet[max_dev_E_verlet_ind]
+max_abs_err_euler_L  = max(abs(L_init_euler - L_euler)/L_init_euler)
+max_abs_err_euler_E  = max(abs(E_init_euler - E_euler)/abs(E_init_euler))
+max_abs_err_verlet_L = max(abs(L_init_verlet - L_verlet)/L_init_verlet)
+max_abs_err_verlet_E = max(abs(E_init_verlet - E_verlet)/abs(E_init_verlet))
 
 
-F = 15  #Fontsize
+F = 12  #Fontsize
 N = len(x_euler)
 
 """Analytical solution t values"""
@@ -46,14 +44,14 @@ r_verlet = np.zeros_like(r_analytical)
 
 for i in range(N-1):
     r_analytical[i] = np.linalg.norm( [ x_analytical[i+1], y_analytical[i+1] ] )
-    r_euler[i] = np.linalg.norm( [x_euler[i+1], y_euler[i+1]] )
-    r_verlet[i] = np.linalg.norm( [x_verlet[i+1], y_verlet[i+1]] )
+    r_euler[i]      = np.linalg.norm( [ x_euler[i+1], y_euler[i+1] ] )
+    r_verlet[i]     = np.linalg.norm( [ x_verlet[i+1], y_verlet[i+1] ] )
 
-max_abs_error_euler = max((abs(r_analytical - r_euler))/r_analytical)
-max_abs_error_verlet = max(abs((r_analytical - r_verlet))/r_analytical)
+max_abs_error_euler_r  = max(abs(r_analytical - r_euler )/r_analytical)
+max_abs_error_verlet_r = max(abs(r_analytical - r_verlet)/r_analytical)
 
 plt.figure(figsize=(8,8))
-plt.title("Two-Body system, Earth orbit around the sun, N=%d, step size %g" % (N, 1./N))
+plt.title("Two-Body system, Earth orbit around Sun fixed at origin, N=%d, step size h= %g" % (N*printstep, 1./(N*printstep)) )
 plt.plot(x_euler, y_euler, label="Forward Euler Algorithm")
 plt.plot(x_verlet, y_verlet, label="Velocity-Verlet Algorithm")
 plt.plot(x_analytical, y_analytical, "--", label="Analytical Solution")
@@ -61,14 +59,16 @@ plt.plot(0, 0, "ro", label="Sun")
 plt.plot(x_euler[0], y_euler[0], "bo", label="Earth initial position")
 plt.xlabel("x", fontsize=F)
 plt.ylabel("y", fontsize=F)
+plt.tick_params(axis='both', which='major', labelsize=F)
 plt.grid(True)
-plt.legend(loc="best")
+plt.legend(loc="upper right", fontsize=F-1)
 plt.show()
 
-print "---------------------------------------------------"
-print "N = %d  Max abs error Euler = %g Max abs error Verlet = %g " % (N, max_abs_error_euler, max_abs_error_verlet)
-print "---------------------------------------------------"
-print "Max_dev L     Euler = %g from init %g" % (max_dev_L_euler, L_init_euler)
-print "Max_dev E     Euler = %g from init %g" % (max_dev_E_euler, E_init_euler)
-print "Max_dev L    Verlet = %g from init %g" % (max_dev_L_verlet, L_init_verlet)
-print "Max_dev E    Verlet = %g from init %g" % (max_dev_E_verlet, E_init_verlet)
+
+print "----------------------------------------------------------"
+print "|    N = %d    |      Euler        |       Verlet      |" % N
+print "----------------------------------------------------------"
+print "|    eps_r     |      %-8.6g     |       %-8.6g | " % (max_abs_error_euler_r, max_abs_error_verlet_r)
+print "|    eps_E     |      %-8.6g   |       %-8.6g    | " % (max_abs_err_euler_E, max_abs_err_verlet_E)
+print "|    eps_L     |      %-8.6g     |       %-8.6g    | " % (max_abs_err_euler_L, max_abs_err_verlet_L)
+print "----------------------------------------------------------"

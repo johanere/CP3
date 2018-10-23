@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <fstream>
 #include <cmath>
@@ -62,11 +63,11 @@ int main(int argc, char * argv[])
 
     double r_x_previous, r_y_previous, v_x_previous, v_y_previous;
 
+    ofstream outfile1;
     if(printstep<=N)
     {
-    ofstream outfile;
-    outfile.open("EarthSunPositionsEulerMethod.dat");
-    outfile << Earth_x0 << " " << Earth_y0 << " " << Earth_L << " " << Earth_E << endl;
+    outfile1.open("EarthSunPositionsEulerMethod.dat");
+    outfile1 << Earth_x0 << " " << Earth_y0 << " " << Earth_L << " " << Earth_E << endl;
     }
 
     /*Current values of angular momentum, potential and kinetic energy */
@@ -98,7 +99,7 @@ int main(int argc, char * argv[])
     //      }
         if((i)%printstep == 0) //check printperiod
         {
-          outfile << r[0] << " " << r[1] << " " << L_curr << " " << E_curr << endl;
+          outfile1 << r[0] << " " << r[1] << " " << L_curr << " " << E_curr << endl;
         }
       }
 
@@ -108,7 +109,7 @@ int main(int argc, char * argv[])
 
     if(printstep<=N)
     {
-      outfile.close();
+      outfile1.close();
     }
     /*Reseting intitial conditions*/
     r[0] = Earth_x0;
@@ -119,10 +120,16 @@ int main(int argc, char * argv[])
     /*Velocity-Verlet Method*/
     auto start2 = chrono::high_resolution_clock::now();  //Timing start
 
-    outfile.open("EarthSunPositionsVerletMethod.dat");
-    outfile << Earth_x0 << " " << Earth_y0 << " " << Earth_L << " " << Earth_E << endl;
 
-    for(int i = 0; i < N; i++)
+    ofstream outfile2;
+    if(printstep<=N)
+    {
+
+    outfile2.open("EarthSunPositionsVerletMethod.dat");
+    outfile2 << Earth_x0 << " " << Earth_y0 << " " << Earth_L << " " << Earth_E << endl;
+    }
+
+    for(int i = 1; i < N; i++)
       {
         r_cubed_old = (r[0]*r[0] + r[1]*r[1])*sqrt(r[0]*r[0] + r[1]*r[1]);
 
@@ -143,13 +150,21 @@ int main(int argc, char * argv[])
         L_curr = AngularMomentum(r[0], r[1], massEarth, v[0], v[1]);
         E_curr = TotalEnergy(massEarth, r[0], r[1], v[0], v[1]);
 
-        outfile << r[0] << " " << r[1] << " " << L_curr << " " << E_curr << endl;
+        if((i)%printstep == 0) //check printperiod
+        {
+          outfile2 << r[0] << " " << r[1] << " " << L_curr << " " << E_curr << endl;
+        }
 
       }
 
     auto stop2 = chrono::high_resolution_clock::now(); //Timing stop
     auto diff2 = stop2-start2;
     cout  << "N=" << N << " Runtime of Velocity-Verlet algorithm = " << chrono::duration <double,milli> (diff2).count() << "ms" << endl;
+
+    if(printstep<=N)
+    {
+      outfile2.close();
+    }
 
     return 0;
   }
