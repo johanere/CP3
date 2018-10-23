@@ -1,0 +1,19 @@
+In Abstract:
+  Include main findings (from concluions) - supplemented by a summary of the partiulars: for example "Verlet superior" supplemented by "with
+  an error margin of 1e-6 for N=1000 integrations points)
+  
+In Introduction:
+  Include structure:
+    In which order are things done. "under "algo implment", the details of implemeting algo into code is covered" - with link to algo implt section
+    Main findings (like in abstract) - but with more detail
+    Tools used (when critical in order to reproduce results): for example c++ with armadillo, and why this tool is used (c++ for optimiation and minimizing cycles)
+    Motivation: Why is the report covering what it is? 
+    
+    Ligninger etter tekst.
+In methods:
+  Under kodeimplementasjon - gi detaljer om innledende tester av algoritme: gir den riktige svar? 
+  Catch for å iverate integritet
+
+In conclusions:
+  Future prospects: due to the following discrepencies, example "not checking conservaton o momentum", further testnig should b done implementing "some test".
+  
