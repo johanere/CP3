@@ -4,3 +4,17 @@ https://en.wikipedia.org/wiki/Escape_velocity
 using expression v_e = sqrt(2GM/r)
 reducing to v_e = sqrt(2G) when r=1AU, and GM = 4pi^2
 giving analytical escape velocity for sun earth system 8.88577 AU/yr
+
+program force function modified to calculate force with default beta=2 which can be run for different beta.
+choosing N = 100000 and t_max = 1
+starting test for
+Earth_v_y0 =  2*pi;
+gives known result
+
+same plot
+
+and increasing 
+
+Earth_v_y0 =  2*pi+1;
+gives
+
