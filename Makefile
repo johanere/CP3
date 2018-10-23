@@ -2,8 +2,8 @@
 output: main.o vec3.o celestialbody.o system.o newtoniangravity.o solver.o
 	c++ -std=c++11 main.o vec3.o celestialbody.o system.o newtoniangravity.o solver.o -o output
 
-test.o: main.cpp
-	c++ -std=c++11 -c main.cpp
+main.o: main.cpp
+	g++ -c main.cpp
 
 vec3.o: vec3.cpp vec3.h
 	c++ -std=c++11 -c vec3.cpp
