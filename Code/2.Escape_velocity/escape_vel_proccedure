@@ -39,5 +39,7 @@ vesctest4.png
 numerical escape velocity reached
 
 Deviation from analytical ~10^{-2} by taking difference.
+Still, numerical value lower than analytical (expected), due to low N? Increasing N to 10000000 (two orders higher) shows no change,
+orbit still not closed.
 
 
