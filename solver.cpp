@@ -18,9 +18,9 @@ Solver::Solver(System newsystem,NewtonianGravity newforce) : problem(newsystem),
 //-------------functions-----------
 void printstart(int N, int Number_of_Bodies,int printstep,int T) // run once when solving, prints paramters for solving
 {
-std::string number_of_steps_per_yr = std::to_string(N);
-std::string T_tot = std::to_string(T);
-std::string number_of_planets = std::to_string(Number_of_Bodies);
+string number_of_steps_per_yr = to_string(N);
+string T_tot = to_string(T);
+string number_of_planets = to_string(Number_of_Bodies);
 string filename;
 filename = number_of_planets+"planets_"+number_of_steps_per_yr+"stepspryr_"+T_tot+"yrs.txt";
 ofile.open(filename);
@@ -122,10 +122,9 @@ void Solver::EulerSolve(int T, int N, int printstep)
         }
 
         }
-        if(printstep<=N)
-        {
-
-        }
       }
-      printstop();
+      if(printstep<=N)
+      {
+        printstop();
+      }
     }
