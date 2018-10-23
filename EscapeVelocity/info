@@ -1,0 +1,6 @@
+Wikipedia page for analytical escape velocity
+https://en.wikipedia.org/wiki/Escape_velocity
+
+using expression v_e = sqrt(2GM/r)
+reducing to v_e = sqrt(2G) when r=1AU, and GM = 4pi^2
+giving analytical escape velocity for sun earth system 8.88577 AU/yr
