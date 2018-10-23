@@ -1,8 +1,6 @@
 #include "solver.h"
 #include "system.h"
 #include "vec3.h"
-
-#include <string>
 #include <fstream>
 #include <iomanip>
 #include <stdlib.h>

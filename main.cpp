@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include <string>
+#include <cstdlib>
 #include "vec3.h"
 #include "celestialbody.h"
 #include "system.h"
@@ -15,9 +15,9 @@ int main(int argc, char * argv[])
 {
 
     // Specify discretization paramters through argsys
-    int N = std::stoi(argv[1]);
-    int printstep = std::stoi(argv[2]);
-    int T = std::stoi(argv[3]);
+    int N = atoi(argv[1]);
+    int printstep = atoi(argv[2]);
+    int T = atoi(argv[3]);
 
     // Initializes sun, earth
     double UnitMass=1988500e24; //kg
