@@ -1,0 +1,43 @@
+Using analytic expression for escape velocity https://en.wikipedia.org/wiki/Escape_velocity
+
+v_e = sqrt(2GM/r) which reduces to v_e = sqrt(2G) in astronomical units.
+Analytical value for earth 8.88577 AU/yr
+
+Setting N high =100000, t_max = 1
+
+Base value of initial velocity v_x0 = 2*pi
+
+v_0 = 2pi + 1 = 7.28319 
+run gives
+
+vesctest1.png
+
+v_0 = 2pi+2.0 = 8.28319
+run gives
+vesctest2.png
+
+for the same v_0 increase t_max = 5 in order to see trajectory more clearly
+run gives
+vesctest2.1.png
+trajectory suggests orbit still closed.
+
+v_0 = 2pi + 2.5 = 8.78319 (close to analytical value)
+t_max = 10
+run gives
+vesttest3.png
+t_max must be increased alot since radii of orbit is getting larger
+for same v_0 t_max = 60
+run gives
+vesttest3.1.png
+orbit still closed.
+
+(!!!Successfull!!!)
+v_0 = 2pi+2.6 = 8.88319
+t_max = 60
+run gives
+vesctest4.png
+numerical escape velocity reached
+
+Deviation from analytical ~10^{-2} by taking difference.
+
+
