@@ -42,7 +42,7 @@ ofile.close();
 }
 
 //solver function
-void Solver::EulerSolve(int T, int N, int printstep)
+void Solver::VerletSolve(int T, int N, int printstep)
     {
 
       int Number_of_Bodies = problem.bodies.size();
