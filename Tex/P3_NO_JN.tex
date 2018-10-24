@@ -168,6 +168,13 @@ I Intro: all data er henta fra NASA, med dato: posisjoner 20.oktober 2017 (for �
 4. Hva med relativitet?
 
 assumes general understanding of forces, and the sum of forces on an object.
+
+first prog: 2d, OO3d, plotting in 2d (xy axis)
+
+ important test
+of the general theory of relativity was to compare its prediction for the perihelion
+precession of Mercury to the observed value.
+
 \section{Methods}
 
 \subsection{Numerical procedures for solving ODEs}
@@ -304,8 +311,14 @@ In order to evaluate the implementation described above, the program is first te
 
 A more thorough testing of the algorithm implementation is then carried out, focusing on two parameters; stability and runtime. Stability is measured through absolute error in relation to a completely circular orbit, and run time is measured by using the Chrono library from C++ - where the Euler implementation is expected to run faster than the velocity Verlet implementation, since it requires fewer FLOPS.  \newline
 
-As the overall aim of the project is to simulate the Solar System, the code will eventually be further modified to encompass multi body systems. As multi body systems tend not to follow circular orbits, this means that comparing simulation results with a known analytical solution will eventually be infeasible. Therefore, while the absolute error is still a good measure of the stability - that is, while the program is limited to a two body system with a known solution - two alternative parameters for program stability are introduced; conservation of energy, $E$, and  conservation of angular momentum, $\omega$. By cross checking the absolute error, a well established parameter for program stability, with conservation of $E$ and $\vec{L}$, this projects seeks to establish the validity of these alternative parameters for program stability when simulating multi body systems. \newline
+As the overall aim of the project is to simulate the Solar System, the code will eventually be further modified to encompass multi body systems. As multi body systems tend not to follow circular orbits, this means that comparing simulation results with a known analytical solution will eventually be infeasible. Therefore, while the absolute error is still a good measure of the stability - that is, while the program is limited to a two body system with a known solution - two alternative parameters for program stability are introduced; conservation of energy, $E$, and  conservation of angular momentum, $\omega$. By cross checking the absolute error, a well established parameter for program stability, with conservation of $E$ and $\vec{L}$, this projects seeks to establish the validity of these alternative parameters for program stability when simulating multi body systems. More on conservation of these quantities below.\newline
 
+In order to measure the parameters above, the following measurements are introduced and applied to each solution produced for each test value of $n$; $\epsilon_r$ - absolute error in relation to the analytical solution - a circle with radius $1AU$, $\epsilon_E$ - absolute deviation from sum of kinetic and potential energy at $t_0$ ($E_0$), and $\epsilon_L$ - absolute deviation from (total) angular momentum at $t_0$ ($L_0$). 
+\begin{align}
+\epsilon_r&=max\Big(\frac{|r(t)-r_{analytical}|}{r_{analytical}}\Big)\\
+\epsilon_E&=max\Big(\frac{|E(t)-E_{0}|}{E_{0}}\Big)\\
+\epsilon_L&=max\Big(\frac{|L(t)-L_{0}|}{L_{0}}\Big)
+\end{align}
 \subsubsection*{On conservation of Angular momentum and conservation of potential and kinetic energy}
 In general, when considerer the gravitational forces acting upon  two object, each of those opposite forces acting upon one of the objects, acts in the direction of the other object. This means that the torque $\tau$ for object $1$ and $2$ may be expressed as: 
 
@@ -318,16 +331,17 @@ This, combined with the relation $\frac{d \vec{L}}{dt} = \sum_j \vec{\tau}$, imp
 
 The law of conservation of energy states that the total energy of an isolated system is preserved over time. Both the two body and  the multi body systems are isolated systems, and as this project does not include any energy transformations except between kinetic and potential (gravitational) energy, the sum of these quantities  is constant. \newline
 
-
+\subsection{On future use of the Velocity Verlet method}
+Under discussion of results, \hyperref[subsec:Init_implm]{Initial implementation}, the velocity Verlet method is established as better suited for the purpose of this project than the Euler's Forward method. In will be used in all further simulations. In addition, a number of steps $n=10^5$ appears to be an ideal trade off \textbf{eller hva? konkluder!} stability
 \subsection{Escape velocity and effects of the gravitational force}
-After having established the velocity Verlet method as better suited for the purpose of this project than the Euler's Forward method, see \hyperref[subsec:Init_implm]{Initial implementation} under discussion of results, the velocity Verlet is now further tested. This is done by evaluating the escape velocity of a planet in a two body system with the Sun.  \newline
+Using $n=10^5$, the velocity Verlet is now further tested. This is done by evaluating the escape velocity of a planet in a two body system with the Sun.  \newline
 
 The escape velocity, $v_{esc}$, is defined as the minimum velocity required to to escape the gravitational field of star system. This requires the planet's gravitational potential and kinetic energy to equal:
 \begin{equation}
 v_{esc} = \sqrt{\frac{2 G M_E}{r}}
 \end{equation}
 
-The planet's starting position is set to $1 \text{ } AU$, and it's initial velocity set to the analytical expression for $v_{esc}$ above. If the potential energy at any point is great that the kinetic energy however, the planet will not escape the Sun's gravitational field. As the program uses several simplifications and is a numerical solver, the planet is not expected to escape. Therefore, by tial and error, different initial velocities are tested in order to find a more representative $v_{esc}$ for the simulated system.\newline
+The planet's starting position is set to $1 \text{ } AU$, and it's initial velocity set to the analytical expression for $v_{esc}$ above. If the potential energy at any point is great that the kinetic energy however, the planet will not escape the Sun's gravitational field. As the program uses several simplifications and is a numerical solver, the planet is not expected to escape. Therefore, by trial and error, different initial velocities are tested in order to find a more representative $v_{esc}$ for the simulated system.\newline
 
 In addition, in order to evaluate the effects of the gravitational force, the force is modified \eqref{eq:M.gravmod} and the code rerun, using the Sun-Earth system.
 \begin{equation}
@@ -364,21 +378,41 @@ The final step before simulating the Solar System with all planets, is to test t
 After initial stability testing of the Sun-Earth-Jupiter system using the object oriented code, the mass of Jupiter, $M_J$ is increased. First by a factor of $10^1$, then by $10^3$. This is expected to have an effect on the trajectory of all three bodies; on the Sun - a pronounced trajectory, on Jupiter - a pronounced trajectory, and on the Earth - \textbf{SOMETHING??}. Especially in the $M_J=10^3 M_J$ case. First, stability tests are executed for each case, then plots are produced, visualizing the effect on the system.
   
 \subsection{Simulating the Solar System}
-After having established the integrity of the applied simulation methods for multi body systems under discussion of results (\hyperref[subsec:Discofres:3B]{the three body system}), the Solar System is now simulated using all $8$ planets and the Sun. All $9$ objects are initialized using HORIZONS system data. Then, using $n=$ - established as suitably stable for the multi body system implementation under discussion of results, the program is executed and the results plotted. \textbf{NOE MER?}
+After having established the integrity of the applied simulation methods for multi body systems under discussion of results (\hyperref[subsec:Discofres:3B]{the three body system}), the Solar System is now simulated using all $8$ planets and the Sun. All $9$ objects are initialized using HORIZONS system data. Then, using $n=$ \textbf{HVA DA?} - established as suitably stable for the multi body system implementation under discussion of results, the program is executed and the results plotted. \textbf{NOE MER?}
 
+\textbf{check for stability?}
  
 \subsection{Effects of relativity}
 \label{sec:M.effectsofrel}
-As previously mentioned, the Solar System model simulation developed in this project does not include the effects of relativity. In order to address this discrepancy, the noe of mercus is now examined.
+As previously mentioned, the Solar System simulator developed in this project does not include the effects of relativity. In order to address this discrepancy, a simplified model of the Solar System is implemented in the object oriented program, this time using the Sun and the planet Mercury, and no other planets. Historically, predicting the perihelion precession of Mercury, in comparison with observations, was used to test the general theory of relativity - which is why this planet is chosen for this specific test in this project. \newline
+
+A general relativistic correction to the Newtonian gravitational force is now introduced \cite{HJ-expaper}: \eqref{eq:M.relativity}. Where, $M_{mercury}$ is the mass of Mercury, $r$ the distance between Mercury and the Sin, $l=|\vec{r}\times \vec{v}|$ the magnitude of the orbital angular momentum per unit mass of Mercury, and $c$ the speed of light in vacuum. 
+
+\begin{equation}
+F_G=\frac{GM_{\odot}M_{mercury}}{r^2}\Big[1+\frac{3l^2}{r^2c^2}\Big]
+\label{eq:M.relativity}
+\end{equation}
+
+The modified force is introduced into a modified version of the already well tested initial two body system program. Mercury is set to start at perihelion on the $x$ axis with $r=0.3075$ AU, and $u_0$ set to $12.44$ AU/yr \cite{HJ-expaper}. Then, the system is solved for $T=100 \text{ }yr$, using $N=10^6$. \textbf{10 i 6?} \newline
+
+The perihelion angle, $\theta_p$, is calculated using $\theta_p=\frac{y_p}{x_p}$ ,where $x_p$, $y_p$ are the perihelion values of $x$ and $y$. This calculated value is then compared to the observed value.\ newline
+
+Subtracting all classical effects (such as the perturbation of the orbit due
+to gravitational attraction from the other planets), the observed value of the perihelion
+precession is $43''$ per century \cite{HJ-expaper}. The program's ability to reproduce this will determine 
+
+\textbf{må forklares litt mer her}
+precession of Mercury to the observed value.  the noe of mercus is now examined.
  4. Kjør Sol og merkur
 - Aphelion/Perihelion beskrive ( og vinkel perihelion)
 - Forklar generell relativitet ledd i kraft
 
+
+
+
 \section{Results}
 \subsection{Testing of initial implementation}
-flops - euler faster as expected?
-
-Figure \ref{fig:twobodyplot} shows....
+Figure \ref{fig:twobodyplot} shows a plot of the output from the initial algorithm implementation. The Sun-Earth system, with the Sun fixed at the origin, is solved over $T=1 yr$, using $n=1000$ steps, and both the Euler's forward method and the The velocity Verlet method are utilized. It is clear that both methods have produced near circular orbits. However, it is also evident that the Euler's Forward method has produced an increasingly erroneous solution, while the velocity Verlet method appears more stable. \newline
 
 \begin{figure}[!htb]
         \centering 
@@ -387,22 +421,46 @@ Figure \ref{fig:twobodyplot} shows....
         \label{fig:twobodyplot}   
 \end{figure}  
 
- Initiell sjekk av at simuleringa fungerer som forventa: plot med sol jord, se at sirukær bane. 
-    - Kommenter: hva ser vi her?
-1.2 Tabell (ved sirkulær bane, to object, sun fixed) Euler og Verlet:
-    - N, Runtime, max abs error for 1 år, største avvik energi avvik fra energi ved $t_0$, og tilsv for $angmom_tot $
-    - Kommenter: hva ser vi her?
-    
- -----KUN VERLET HERFRA -------
+In order to quantify the differences observed in figure \ref{fig:twobodyplot}, further testing of the implementation is carried out. Table \ref{tab:EulerVsVerlet} shows a comparison in $ms$ of run time, $\epsilon_r$, $\epsilon_E$, and $\epsilon_L$, between the Euler's forward method and the The velocity Verlet method implementations as a function of number of steps $n$ in $T=1 yr$. The table shows that both methods have approximately the same order of magnitude in regards to run time, and that the Euler's method is approximately $1.5$ times faster for all test values of $n <10^2$. \newline
 
-\subsection{Object Orientation: verifying integrity of methods} Plot med sol og jord, sun fixed som viser at simuleringa fortsatt fungerer
+In regards to stability, both methods have decreasing $\epsilon_r$ for higher values of $n$,  however by using the Velocity Verlet method, $epsilon_r$ decreases faster than when using the Euler's method. In addition, the Verlet method appears to reach a minimum $\epsilon_r$ at around $n=10^5$ of approximately $7\cdot 10^{-6}$. \textbf{mathmticl vs machine rep, eller målefeil?} Although the $\epsilon_r$ for Verlet increases slightly at $n=10^6$, it is onl
+
+Lastly, it is evident that Verlet conserves both energy and angular momentum for all tested values of $n>2$, while the Euler's method has errors of the same magnitude as for $\epsilon_r$.
+
+   
+\begin{table}[h]
+\begin{tabular}{lllllll}
+$n=10^j$         & $j=1$      & $j=2$       & $j=3$       & $j=4$         & $j=5$          & $j=6$           \\
+Forward Euler    &            &             &             &               &                &                 \\
+Runtime {[}ms{]} & 0.02       & 0.03        & 0.16        & 1.48$\pm$0.01 & 15.03$\pm$0.04 & 133.15$\pm$3.28 \\
+$\epsilon_r$     & 3.67604    & 0.712392    & 0.076873    & 0.00787107    & 0.000794016    & 8.39334e-05     \\
+$\epsilon_E$     & 1.47043    & 0.347594    & 0.0683006   & 0.00777134    & 0.000788617    & 7.76796e-05     \\
+$\epsilon_L$     & 3.39498    & 0.229527    & 0.0359955   & 0.00390459    & 0.000392581    & 3.71361e-05     \\
+Velocity Verlet  &            &             &             &               &                &                 \\
+Runtime {[}ms{]} & 0.01       & 0.03        & 0.24        & 2.40$\pm$0.02 & 24.28$\pm$0.08 & 198.00$\pm$3.62 \\
+$\epsilon_r$     & 0.186713   & 0.00197411  & 2.02018e-05 & 8.62426e-07   & 6.99042e-07    & 6.99806e-07     \\
+$\epsilon_E$     & 0.0248946  & 3.37737e-06 & 0           & 0             & 0              & 0               \\
+$\epsilon_L$     & 0.00585689 & 0           & 0           & 0             & 0              & 0              
+\end{tabular}
+\caption{Comparison in $ms$ of run time, $\epsilon_r$, $\epsilon_E$, and $\epsilon_L$, between the Euler's forward method and the The velocity Verlet method implementations as a function of number of steps $n$ in $T=1 yr$}
+\label{tab:EulerVsVerlet}
+\end{table}
+    
  
 \subsection{Escape velocity}
+
+
 1.3 $(V_esc)$ Presenter plot med analytisk $v_esc.$ Deretter $v_esc$ ved trial and error. Kommenter forskjell (høyere eller lavere enn analytisk?)
 \subsection{Effects of gravitational force}
 1.4 (Tyngekrafta)  Multiplot med bane for sol jord med ulike beta
 
+
+\subsection{Object Orientation: verifying integrity of methods} Plot med In order to verify the integrity of the algorithm, a simple simulation of the Sun-Earth system is carried out by using $n=1000$. This is expected to produce a plot similar to the one produced under initial testing (of the velocity Verlet algorithm).
+
+initial values? n?
+sol og jord, sun fixed som viser at simuleringa fortsatt fungerer
 \subsection{Multi Body: Verifying integrity of implementation }
+
 2.1 - Plot ESJ oppå ES
     - For en N som tidligere har vært stabil - presenter momentumbevaring. Samme toleranse? Må vi øke N for samme stabilitet?
 \subsection{Multi Body: The effects of another object on the Earth's trajectory}
@@ -417,10 +475,22 @@ Figure \ref{fig:twobodyplot} shows....
 - finn vinkel etter 100 år med newtonsk
 - finn vinkel etter 100 år med generell relativitet
 
+. You may use that the speed of Mercury
+at perihelion is 12.44 AU/yr, and that the distance to the Sun at perihelion
+is 0.3075 AU.
+You need to make sure that the time resolution used in your
+simulation is sufficient, for example by checking that the perihelion precession
+you get with a pure Newtonian force is at least a few orders of magnitude smaller
+than the observed perihelion precession of Mercury. Can the observed perihelion
+precession of Mercury be explained by the general theory of relativity
+
 \section{Discussion of results}
 
 \subsection{Initial implementation}
 \label{subsec:Discofres:initimpl}
+
+and the results plotted for each of the two numerical methods. This is expected to produce a circular Earth orbit, bringing the Earth back to it's starting position, with some deviations due to discretization and the LTE. The velocity Verlet method is expected to produce more accurate results on account of having the smallest LTE among the two methods.
+flops - euler faster as expected?
 floats - same $a$ -> verlet has more floats, should take longer
 \label{subsec:Init_implm}
  Ser ut til at simuleringa fungerer
