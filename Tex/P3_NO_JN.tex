@@ -456,10 +456,16 @@ $\epsilon_L$     & 0.00585689 & 0           & 0           & 0             & 0   
 1.4 (Tyngekrafta)  Multiplot med bane for sol jord med ulike beta
 
 
-\subsection{Object Orientation: verifying integrity of methods} Plot med In order to verify the integrity of the algorithm, a simple simulation of the Sun-Earth system is carried out by using $n=1000$. This is expected to produce a plot similar to the one produced under initial testing (of the velocity Verlet algorithm).
+\subsection{Object Orientation: Verifying integrity of methods} 
+Figure \ref{fig:twobodyplotOO} visualises the Sun-Earth system solved for $T=1$ using the object oriented code with $n=10^5$. The solution appears to satisfy the expected results; circular orbit with $r\approx 1$ AU. \textbf{Verification of conservartion L needed!}
 
-initial values? n?
-sol og jord, sun fixed som viser at simuleringa fortsatt fungerer
+\begin{figure}[!htb]
+        \centering 
+         \includegraphics[scale=.6]{../Results/SunEarthOONj5T1png} 
+        \caption{Plot of the Sun-Earth system using object oriented code  with $n=10^5$}
+        \label{fig:twobodyplotOO}   
+\end{figure}  
+
 \subsection{Multi Body: Verifying integrity of implementation }
 
 2.1 - Plot ESJ oppå ES
@@ -495,7 +501,7 @@ In terms of stability, the Velocity Verlet method algorithm implementation is de
 
 In regards to runtime, Euler is faster than Verlet, just as expected, since the Verlet algorithm has more FLOPS. The difference appears to be given by an approximate factor of $1.5$. All in all, $n=10^5$ is decided upon as a suitable number of steps for the purpose of this project, both in regards to run time, and in regards to accuracy.\newline
 
-Both energy and angular momentum is conserved for $n=10^5$ when using the Verlet based algorithm. This is a requirement when simulating such systems as this project focuses on (as explained under \hyperref[subsec:ev_of_init_impl]{Evaluation of initial implementasjon}), further empathizing that the velocity Verlet method is better suited for this project. \newlin
+Both energy and angular momentum is conserved for $n=10^5$ when using the Verlet based algorithm. This is a requirement when simulating such systems as this project focuses on (as explained under \hyperref[subsec:ev_of_init_impl]{Evaluation of initial implementasjon}), further empathizing that the velocity Verlet method is better suited for this project. \newline
 
 Because $\epsilon_r$ is an unsuitable measurement when a multi body system is examined (due to complexity of analytical solution), conservation of angular momentum is instead defined as the stability measurement to be used for all other purposes in this project. It is however important to note that angular momentum is conserved when $\epsilon_r$ is $\sim 0.002$ - which may indicate that the instability threshold increases when measured through conservation of angular momentum. 
 
@@ -504,6 +510,9 @@ Because $\epsilon_r$ is an unsuitable measurement when a multi body system is ex
 1.3 $(V_esc)$ Er det en sammenheng med hva vi så på energibevaring elns? 
 \subsection{Effects og gravitational force}
 1.4 (Tyngekrafta) Kommenter noe på beta-> med høyere beta, avtar tyngekrafta fortere med avstand -> planetene stikekr av
+
+\subsection{Object Orientation: Verifying integrity of methods} 
+As shown in the results section, the object orientation of the code appears to have been successfully. However, the implementation was not tested in depth for run time $\epsilon_r$, $\epsilon_E$, $\epsilon_L$ - so there may have been some (smaller) deviations from results produced by the non object oriented code. On the other hand, angular momentum was preserved, which is serves as a sufficient parameter for the purpose of this project.
 
 \subsection{The three body system}
 \label{subsec:Discofres:3B}

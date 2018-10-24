@@ -19,7 +19,7 @@
 \BOOKMARK [2][-]{subsection.3.1}{Testing of initial implementation}{section.3}% 19
 \BOOKMARK [2][-]{subsection.3.2}{Escape velocity}{section.3}% 20
 \BOOKMARK [2][-]{subsection.3.3}{Effects of gravitational force}{section.3}% 21
-\BOOKMARK [2][-]{subsection.3.4}{Object Orientation: verifying integrity of methods}{section.3}% 22
+\BOOKMARK [2][-]{subsection.3.4}{Object Orientation: Verifying integrity of methods}{section.3}% 22
 \BOOKMARK [2][-]{subsection.3.5}{Multi Body: Verifying integrity of implementation }{section.3}% 23
 \BOOKMARK [2][-]{subsection.3.6}{Multi Body: The effects of another object on the Earth's trajectory}{section.3}% 24
 \BOOKMARK [2][-]{subsection.3.7}{Solar System:verifying integrity of implementation }{section.3}% 25
@@ -28,11 +28,12 @@
 \BOOKMARK [2][-]{subsection.4.1}{Initial implementation}{section.4}% 28
 \BOOKMARK [2][-]{subsection.4.2}{Escape velocity}{section.4}% 29
 \BOOKMARK [2][-]{subsection.4.3}{Effects og gravitational force}{section.4}% 30
-\BOOKMARK [2][-]{subsection.4.4}{The three body system}{section.4}% 31
-\BOOKMARK [3][-]{subsubsection.4.4.1}{Integrity of methods}{subsection.4.4}% 32
-\BOOKMARK [3][-]{subsubsection.4.4.2}{Effects on Earth's trajectory}{subsection.4.4}% 33
-\BOOKMARK [2][-]{subsection.4.5}{Solar system}{section.4}% 34
-\BOOKMARK [3][-]{subsubsection.4.5.1}{Integrity of methods}{subsection.4.5}% 35
-\BOOKMARK [2][-]{subsection.4.6}{Effects of relativty}{section.4}% 36
-\BOOKMARK [1][-]{section.5}{Conclusions}{}% 37
-\BOOKMARK [1][-]{section*.5}{References}{}% 38
+\BOOKMARK [2][-]{subsection.4.4}{Object Orientation: Verifying integrity of methods}{section.4}% 31
+\BOOKMARK [2][-]{subsection.4.5}{The three body system}{section.4}% 32
+\BOOKMARK [3][-]{subsubsection.4.5.1}{Integrity of methods}{subsection.4.5}% 33
+\BOOKMARK [3][-]{subsubsection.4.5.2}{Effects on Earth's trajectory}{subsection.4.5}% 34
+\BOOKMARK [2][-]{subsection.4.6}{Solar system}{section.4}% 35
+\BOOKMARK [3][-]{subsubsection.4.6.1}{Integrity of methods}{subsection.4.6}% 36
+\BOOKMARK [2][-]{subsection.4.7}{Effects of relativty}{section.4}% 37
+\BOOKMARK [1][-]{section.5}{Conclusions}{}% 38
+\BOOKMARK [1][-]{section*.5}{References}{}% 39
