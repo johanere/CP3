@@ -1,4 +1,8 @@
 import numpy as np
+"""Program computes maximum absolute error of total angular
+momentum for M=3 bodies, NB: filename must be modified for
+specific N,T"""
+
 
 M = 3   #Number of bodies
 textfile = np.loadtxt("3planets_1000000stepspryr_12yrs.txt")
