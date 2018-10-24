@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  24 OCT 2018 23:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  25 OCT 2018 01:06
 entering extended mode
 **./P3_NO_JN.tex
 (P3_NO_JN.tex
@@ -675,37 +675,58 @@ LaTeX Info: Redefining \nameref on input line 99.
 \c@lstlisting=\count149
  ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 99.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 145.
 
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
+
+ []
+
+[1
+
+{C:/Users/Johan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
+
+ []
+
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 155.
 
 (C:\Johan\Miktex\tex\latex\lm\ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 145.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 155.
 
 
 (C:\Johan\Miktex\tex\latex\lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 145
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 155
 .
 
 (C:\Johan\Miktex\tex\latex\lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 145
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 155
 .
 
 (C:\Johan\Miktex\tex\latex\lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 145.
+(Font)              <10> on input line 155.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 145.
+(Font)              <7> on input line 155.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 145.
-LaTeX Font Info:    Try loading font information for U+msa on input line 145.
+(Font)              <5> on input line 155.
+LaTeX Font Info:    Try loading font information for U+msa on input line 155.
 
 (C:\Johan\Miktex\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -713,7 +734,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (C:\Johan\Miktex\tex\latex\microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 145.
+LaTeX Font Info:    Try loading font information for U+msb on input line 155.
 
 (C:\Johan\Miktex\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -721,29 +742,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (C:\Johan\Miktex\tex\latex\microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
-
- []
-
-[1
-
-{C:/Users/Johan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
 
  []
 
@@ -757,136 +756,134 @@ Underfull \hbox (badness 10000) in paragraph at lines 160--161
 
  []
 
-(C:\Johan\Miktex\tex\latex\ucs\uni-0.def
-File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
-)
-Underfull \hbox (badness 10000) in paragraph at lines 171--172
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
 
  []
 
-[2] (C:\Johan\Miktex\tex\latex\ucs\uni-32.def
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
+
+ []
+
+(C:\Johan\Miktex\tex\latex\ucs\uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
-Underfull \hbox (badness 10000) in paragraph at lines 180--183
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+) [3]
+Underfull \hbox (badness 10000) in paragraph at lines 190--193
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--203
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 223--223
- [] 
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 233--233
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 249--249
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 259--259
  [] 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--262
+Underfull \hbox (badness 10000) in paragraph at lines 271--273
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--265
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--292
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 293--294
+Underfull \hbox (badness 10000) in paragraph at lines 305--306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--301
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 302--303
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--305
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 320--321
+Underfull \hbox (badness 10000) in paragraph at lines 332--333
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--323
-
- []
-
-
-LaTeX Warning: Hyper reference `subsec:Init_implm' on page 9 undefined on input
- line 325.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 327--328
-
- []
-
-[9]
 Underfull \hbox (badness 10000) in paragraph at lines 334--335
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--347
+LaTeX Warning: Hyper reference `subsec:Init_implm' on page 9 undefined on input
+ line 337.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
 
  []
 
-
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 348--349
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 350--351
-
- []
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 352--353
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 354--355
 
  []
 
@@ -896,49 +893,74 @@ Underfull \hbox (badness 10000) in paragraph at lines 360--361
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
+
+ []
+
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 366--367
 
  []
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 376--377
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--386
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--381
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 391--392
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--401
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
+Underfull \hbox (badness 10000) in paragraph at lines 412--413
 
  []
 
-<../Results/twoBodyNOOplot1.png, id=272, 578.16pt x 578.16pt>
+<../Results/twoBodyNOOplot1.png, id=285, 578.16pt x 578.16pt>
 File: ../Results/twoBodyNOOplot1.png Graphic file (type png)
 <use ../Results/twoBodyNOOplot1.png>
-Package pdftex.def Info: ../Results/twoBodyNOOplot1.png  used on input line 401
-. on input line 401.
+Package pdftex.def Info: ../Results/twoBodyNOOplot1.png  used on input line 416
+. on input line 416.
 Package pdftex.def Info: Requested size: 346.89867pt x 346.89867pt on input lin
-e 401.
+e 416.
 
-Overfull \hbox (1.89867pt too wide) in paragraph at lines 401--402
+Overfull \hbox (1.89867pt too wide) in paragraph at lines 416--417
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 406--407
+Underfull \hbox (badness 10000) in paragraph at lines 421--422
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 408--409
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
 
  []
 
 
-Overfull \hbox (109.30618pt too wide) in paragraph at lines 414--427
+Overfull \hbox (52.20206pt too wide) in paragraph at lines 429--444
 [][] 
  []
 
@@ -946,132 +968,125 @@ Overfull \hbox (109.30618pt too wide) in paragraph at lines 414--427
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [13]
-<../Results/VescAllOnePlotnj5T10.png, id=284, 578.16pt x 578.16pt>
+<../Results/VescAllOnePlotnj5T10.png, id=297, 578.16pt x 578.16pt>
 File: ../Results/VescAllOnePlotnj5T10.png Graphic file (type png)
 <use ../Results/VescAllOnePlotnj5T10.png>
 Package pdftex.def Info: ../Results/VescAllOnePlotnj5T10.png  used on input lin
-e 437. on input line 437.
+e 454. on input line 454.
 Package pdftex.def Info: Requested size: 289.07928pt x 289.07928pt on input lin
-e 437.
- [14 <../Results/twoBodyNOOplot1.png>] [15 <../Results/VescAllOnePlotnj5T10.png
->]
-<../Results/vesc6betas.png, id=298, 578.16pt x 578.16pt>
+e 454.
+ [14 <../Results/twoBodyNOOplot1.png>]
+
+LaTeX Warning: Text page 15 contains only floats.
+
+[15 <../Results/VescAllOnePlotnj5T10.png>]
+<../Results/vesc6betas.png, id=311, 578.16pt x 578.16pt>
 File: ../Results/vesc6betas.png Graphic file (type png)
 <use ../Results/vesc6betas.png>
-Package pdftex.def Info: ../Results/vesc6betas.png  used on input line 452. on 
-input line 452.
+Package pdftex.def Info: ../Results/vesc6betas.png  used on input line 469. on 
+input line 469.
 Package pdftex.def Info: Requested size: 289.07928pt x 289.07928pt on input lin
-e 452.
-<../Results/SunEarthOONj5T1png.png, id=300, 462.528pt x 346.896pt>
+e 469.
+<../Results/SunEarthOONj5T1png.png, id=313, 462.528pt x 346.896pt>
 File: ../Results/SunEarthOONj5T1png.png Graphic file (type png)
 <use ../Results/SunEarthOONj5T1png.png>
 Package pdftex.def Info: ../Results/SunEarthOONj5T1png.png  used on input line 
-462. on input line 462.
+480. on input line 480.
 Package pdftex.def Info: Requested size: 277.51894pt x 208.13919pt on input lin
-e 462.
+e 480.
  [16 <../Results/vesc6betas.png>]
-<../Results/OOthreeBodyEarthSun1Jupiterj5T6.png, id=309, 462.528pt x 346.896pt>
+<../Results/OOthreeBodyEarthSun1Jupiterj5T6.png, id=322, 462.528pt x 346.896pt>
 
 File: ../Results/OOthreeBodyEarthSun1Jupiterj5T6.png Graphic file (type png)
 <use ../Results/OOthreeBodyEarthSun1Jupiterj5T6.png>
 Package pdftex.def Info: ../Results/OOthreeBodyEarthSun1Jupiterj5T6.png  used o
-n input line 472. on input line 472.
+n input line 490. on input line 490.
 Package pdftex.def Info: Requested size: 277.51894pt x 208.13919pt on input lin
-e 472.
+e 490.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 479.
+               Default added (so using `tbp') on input line 497.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 491--492
+Underfull \hbox (badness 10000) in paragraph at lines 509--510
 
  []
 
 [17 <../Results/SunEarthOONj5T1png.png>]
-<../Results/OOthreeBodyEarthSun10Jupiterj5T6.png, id=323, 462.528pt x 346.896pt
+<../Results/OOthreeBodyEarthSun10Jupiterj5T6.png, id=336, 462.528pt x 346.896pt
 >
 File: ../Results/OOthreeBodyEarthSun10Jupiterj5T6.png Graphic file (type png)
 <use ../Results/OOthreeBodyEarthSun10Jupiterj5T6.png>
 Package pdftex.def Info: ../Results/OOthreeBodyEarthSun10Jupiterj5T6.png  used 
-on input line 497. on input line 497.
+on input line 515. on input line 515.
 Package pdftex.def Info: Requested size: 277.51894pt x 208.13919pt on input lin
-e 497.
-<../Results/OOthreeBodyEarthSun1000Jupiterj5T6.png, id=324, 462.528pt x 346.896
+e 515.
+<../Results/OOthreeBodyEarthSun1000Jupiterj5T6.png, id=337, 462.528pt x 346.896
 pt>
 File: ../Results/OOthreeBodyEarthSun1000Jupiterj5T6.png Graphic file (type png)
 
 <use ../Results/OOthreeBodyEarthSun1000Jupiterj5T6.png>
 Package pdftex.def Info: ../Results/OOthreeBodyEarthSun1000Jupiterj5T6.png  use
-d on input line 503. on input line 503.
+d on input line 521. on input line 521.
 Package pdftex.def Info: Requested size: 277.51894pt x 208.13919pt on input lin
-e 503.
-
-
-LaTeX Warning: Reference `fig:fig:ssplotT=10' on page 18 undefined on input lin
-e 511.
-
-<../Results/SolarSyst9BodiesNj5T1.png, id=326, 462.528pt x 346.896pt>
+e 521.
+<../Results/SolarSyst9BodiesNj5T1.png, id=340, 462.528pt x 346.896pt>
 File: ../Results/SolarSyst9BodiesNj5T1.png Graphic file (type png)
 <use ../Results/SolarSyst9BodiesNj5T1.png>
 Package pdftex.def Info: ../Results/SolarSyst9BodiesNj5T1.png  used on input li
-ne 515. on input line 515.
+ne 533. on input line 533.
 Package pdftex.def Info: Requested size: 277.51894pt x 208.13919pt on input lin
-e 515.
-<../Results/SolarSyst9BodiesNj5T10.png, id=328, 462.528pt x 346.896pt>
+e 533.
+<../Results/SolarSyst9BodiesNj5T10.png, id=341, 462.528pt x 346.896pt>
 File: ../Results/SolarSyst9BodiesNj5T10.png Graphic file (type png)
 <use ../Results/SolarSyst9BodiesNj5T10.png>
 Package pdftex.def Info: ../Results/SolarSyst9BodiesNj5T10.png  used on input l
-ine 524. on input line 524.
+ine 541. on input line 541.
 Package pdftex.def Info: Requested size: 277.51894pt x 208.13919pt on input lin
-e 524.
-[18 <../Results/OOthreeBodyEarthSun1Jupiterj5T6.png>]
+e 541.
+ [18 <../Results/OOthreeBodyEarthSun1Jupiterj5T6.png>]
 
 LaTeX Warning: Text page 19 contains only floats.
 
 [19 <../Results/OOthreeBodyEarthSun10Jupiterj5T6.png> <../Results/OOthreeBodyEa
 rthSun1000Jupiterj5T6.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 538--539
+Underfull \hbox (badness 10000) in paragraph at lines 557--558
 
  []
 
 [20 <../Results/SolarSyst9BodiesNj5T1.png> <../Results/SolarSyst9BodiesNj5T10.p
 ng>]
-Underfull \hbox (badness 10000) in paragraph at lines 540--541
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 542--543
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 544--545
-
- []
-
-[21]
 Underfull \hbox (badness 10000) in paragraph at lines 559--560
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 563--564
+
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 578--579
+
+ []
+
 [22]
-
-LaTeX Warning: Reference `fig:fig:ssplotT=10' on page 23 undefined on input lin
-e 564.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 570--571
+Underfull \hbox (badness 10000) in paragraph at lines 590--591
 
  []
 
 (P3_NO_JN.bbl [23])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 578.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 598.
  [24]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 578.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 598.
  (P3_NO_JN.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 578.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 598.
 
 
  *File List*
@@ -1179,7 +1194,6 @@ P3_NO_JN.out
   mt-msa.cfg    2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
     umsb.fd    2013/01/14 v3.01 AMS symbols B
   mt-msb.cfg    2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-   uni-0.def    2013/05/13 UCS: Unicode data U+0000..U+00FF
   uni-32.def    2013/05/13 UCS: Unicode data U+2000..U+20FF
 ../Results/twoBodyNOOplot1.png
 ../Results/VescAllOnePlotnj5T10.png
@@ -1193,9 +1207,9 @@ P3_NO_JN.out
 P3_NO_JN.bbl
  ***********
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 578.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 598.
 Package rerunfilecheck Info: File `P3_NO_JN.out' has not changed.
-(rerunfilecheck)             Checksum: F21417555D4509508B57F4099F79EC14;2799.
+(rerunfilecheck)             Checksum: FC74D0997CD7496E047E66B6B1FAE543;2793.
 
 LaTeX Warning: There were undefined references.
 
@@ -1204,28 +1218,29 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 12578 strings out of 493312
- 181571 string characters out of 3144112
- 317584 words of memory out of 3000000
- 15624 multiletter control sequences out of 15000+200000
- 71297 words of font info for 126 fonts, out of 3000000 for 9000
+ 12109 strings out of 493312
+ 176827 string characters out of 3144112
+ 318598 words of memory out of 3000000
+ 15149 multiletter control sequences out of 15000+200000
+ 76088 words of font info for 131 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,43p,1136b,479s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,12n,43p,1136b,473s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Johan/Miktex/fonts/enc/dvips/lm/lm-ec.enc}{C:/Johan/Miktex/fonts/enc/dvip
 s/lm/lm-mathex.enc}{C:/Johan/Miktex/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Johan/
 Miktex/fonts/enc/dvips/lm/lm-rm.enc}{C:/Johan/Miktex/fonts/enc/dvips/lm/lm-math
 sy.enc}<C:/Johan/Miktex/fonts/type1/public/lm/lmbx10.pfb><C:/Johan/Miktex/fonts
-/type1/public/lm/lmbx12.pfb><C:/Johan/Miktex/fonts/type1/public/lm/lmex10.pfb><
-C:/Johan/Miktex/fonts/type1/public/lm/lmmi10.pfb><C:/Johan/Miktex/fonts/type1/p
-ublic/lm/lmmi5.pfb><C:/Johan/Miktex/fonts/type1/public/lm/lmmi7.pfb><C:/Johan/M
-iktex/fonts/type1/public/lm/lmr10.pfb><C:/Johan/Miktex/fonts/type1/public/lm/lm
-r5.pfb><C:/Johan/Miktex/fonts/type1/public/lm/lmr7.pfb><C:/Johan/Miktex/fonts/t
-ype1/public/lm/lmr9.pfb><C:/Johan/Miktex/fonts/type1/public/lm/lmri10.pfb><C:/J
-ohan/Miktex/fonts/type1/public/lm/lmri7.pfb><C:/Johan/Miktex/fonts/type1/public
-/lm/lmsy10.pfb><C:/Johan/Miktex/fonts/type1/public/lm/lmsy7.pfb>
-Output written on P3_NO_JN.pdf (24 pages, 643656 bytes).
+/type1/public/lm/lmbx12.pfb><C:/Johan/Miktex/fonts/type1/public/lm/lmbxi10.pfb>
+<C:/Johan/Miktex/fonts/type1/public/lm/lmex10.pfb><C:/Johan/Miktex/fonts/type1/
+public/lm/lmmi10.pfb><C:/Johan/Miktex/fonts/type1/public/lm/lmmi5.pfb><C:/Johan
+/Miktex/fonts/type1/public/lm/lmmi7.pfb><C:/Johan/Miktex/fonts/type1/public/lm/
+lmr10.pfb><C:/Johan/Miktex/fonts/type1/public/lm/lmr5.pfb><C:/Johan/Miktex/font
+s/type1/public/lm/lmr7.pfb><C:/Johan/Miktex/fonts/type1/public/lm/lmr9.pfb><C:/
+Johan/Miktex/fonts/type1/public/lm/lmri10.pfb><C:/Johan/Miktex/fonts/type1/publ
+ic/lm/lmri7.pfb><C:/Johan/Miktex/fonts/type1/public/lm/lmsy10.pfb><C:/Johan/Mik
+tex/fonts/type1/public/lm/lmsy7.pfb>
+Output written on P3_NO_JN.pdf (24 pages, 665944 bytes).
 PDF statistics:
- 443 PDF objects out of 1000 (max. 8388607)
+ 460 PDF objects out of 1000 (max. 8388607)
  102 named destinations out of 1000 (max. 500000)
- 18262 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 18774 words of extra memory for PDF output out of 20736 (max. 10000000)
 

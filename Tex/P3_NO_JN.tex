@@ -141,27 +141,37 @@ Sep 24, 2018
 \vspace{1cm}
 
 \section{Abstract}
-
-The overall aim of this project is to develop a program that simulates the Solar System by numerically solving equations that describe the trajectory of the planets and the Sun.  The main program developed in this project was determined to successfully simulate a simplified model of  the solar system using all planets and Newtonian gravity - evaluated through conservation of angular momentum within a margin of $6.1 \cdot 10^{-8}$.
+The overall aim of this project is to develop a program that simulates the Solar System by numerically solving equations that describe the trajectory of the planets and the Sun. This is done through examining numerical procedures for solving ODEs, developing algorithms, and implementing the algorithms in programs using methods for object orientation in C++. By comparing two different numerical procedures, the velocity Verlet method and the Euler's Forward method, the velocity Verlet method was concluded upon as more suitable, due to stability of the produced solutions. The main program developed in this project was determined to successfully simulate a simplified model of the solar system using all planets and Newtonian gravity - evaluated through conservation of angular momentum. Lastly, the consequences of neglecting relativity in the model were determined to be minimal for any time frame less than hundreds of years.
 
 \section{Introduction}
+\textit{\textbf{Authors' comment:} As this was the first time either of the authors have ever co-written a project of this magnitude, there have been some challenges in properly implementing tools for shared writing. The tool we have used is Github, an excellent website that we unfortunately are not yet very experienced with. As a consequence of this, an unfinished version of the report was included in the Github repository at the time of the deadline. We have later taken the liberty of uploading the finished project} \newline
+
+Simulating the Solar System is a common exercise in many physics courses. With good reason - the correct application of the procedures required to obtain a stable solution are representative of a multitude of similar problems. As this project intends to develop an object oriented program in order to simulate the Solar System, the program may later be modified in order to be applied to other, similar, systems. Such as the interaction of particles. \newline
+
 The overall aim of this project is to develop a program that simulates the Solar System by numerically solving equations that describe the trajectory of the planets and the Sun. The motion of each of these objects is subject to the sum of forces acting upon that object, and it's trajectory may be described through a set of coupled ordinary differential equations (ODEs). \newline
 
-First, this project describes two numerical procedure for solving ODEs; the velocity Verlet and Euler's Forward method (\hyperref[sec:NPs]{here}. After describing the numerical procedures, the projects goes on to developing algorithms for both numerical methods \hyperref[sec:NPalgo]{here}. Then, an examination of a simplified model of the Solar System, consisting of the Sun and the Earth, is carried out. Having described this system, a set of coupled ODEs are extracted, and the algorithms for the numerical procedures applied through code implementation using $C++$ - due to it's well established affinity for code optimization. \newline
+As this project intends to develop an object oriented program in order to simulate the Solar System, the program may later be modified in order to be applied to other, similar, systems. Such as the interaction of particles. \newline
 
-Following the program development, both of the numerical procedures are evaluated, emphasizing stability and runtime, and prioritizing stability over speed - upon which the velocity Verlet was decided upon as the most suitable method, with a an absolute error of $\approx 7 \cdot 10^{-07}$ over $n=10^5$ integration points. In term of run time, the Euler's method was found to be approximately $1.5$ times faster than the velocity Verlet method. In addition, the Velocity Verlet method was found to conserve both total angular momentum and the sum of potential and kinetic energy within a small margin ($\sim 10^{-7}$) in most cases for $n=10^5$ integration points. \newline
+First, this project describes two \hyperref[sec:NPs]{numerical procedures} for solving ODEs; the velocity Verlet and Euler's Forward method. After describing the numerical procedures, the project goes on to developing \hyperref[sec:NPalgo]{algorithms} for both numerical methods. Then, an examination of a \hyperref[subsec:SEsys]{simplified model} of the Solar System, consisting of the Sun and the Earth, is carried out. Having described this system, a set of coupled ODEs are extracted, and the algorithms for the numerical procedures applied through \hyperref[subsec:algoimpl]{code implementation} using $C++$ - due to it's well established affinity for code optimization. \newline
 
-After having established a choice of numerical procedure, the project goes on to testing the implementation through evaluation of escape velocity and the effects of gravity on the trajectory of the Earth. Then, the initial code is further developed by applying object orientation methods, upon which tests for code integrity are carried out. \newline
 
-Upon verification of code integrity through the object orientation process, the model of the Solar System is expanded to include multiple bodies. Jupiter is added to the system, and the object oriented program is re-run in order to verify stability when simulating multiple bodies. In addition, the effects of Jupiter's mass is more closely examined through running simulations where it's mass was increased. \newline
+Following the program development, both of the numerical procedures are evaluated, emphasizing stability and runtime, and prioritizing stability over speed - upon which the velocity Verlet was decided upon as the most \hyperref[subsec:Discofres:initimpl]{suitable method}, with a an absolute error of $\approx 7 \cdot 10^{-07}$ over $n=10^5$ integration points. In term of run time, the Euler's method was found to be approximately $1.5$ times faster than the velocity Verlet method. In addition, the Velocity Verlet method was found to conserve both total angular momentum and the sum of potential and kinetic energy within a small margin ($\sim 10^{-7}$) in most cases for $n=10^5$ integration points. \newline
 
-After having established the object oriented program's ability to simulate multiple bodies, a full model of all the 8 planets of the Solar System (and the Sun) is implemented and assessed through stability - measured in conservation of angular momentum. The project's main results is the successfully development of an object oriented program capable of simulating a simplified version of the solar system using all planets and Newtonian gravity, with angular momentum conserved within a margin of $6.1 \cdot 10^{-8}$. \newline
+After having established a choice of numerical procedure, the project goes on to testing the implementation through evaluation of \hyperref[subsec:vesc]{escape velocity} and the effects of gravity on the trajectory of the Earth. Then, the initial code is further developed by applying \hyperref[sec:OOing]{object orientation} methods, upon which tests for code integrity are carried out. \newline
 
-Lastly, the effects of relativity - which was not included in the main simulation program - is examined through a simulation of Mercury's perihelion precession. Historically, predicting the perihelion precession of Mercury, in comparison with observations, was used to test the general theory of relativity - which is why this planet is chosen for this specific test in this project. The test however, shows that the effects are marginal within the time frames used in this project - and only significant when simulating the Solar System over larger time spans. \newline
+Upon verification of \hyperref[subsec:OOverification]{code integrity} through the object orientation process, the model of the Solar System is expanded to include \hyperref[sec:Modmultibody]{multiple bodies}. Jupiter is added to the system, and the object oriented program is re-run in order to verify stability when simulating multiple bodies. In addition, the effects of Jupiter's mass is more closely examined through running simulations where it's mass was increased. Here, certain \hyperref[subsec:Discofres:3B]{discrepancies} in the results indicated that future examination of the three body system is necessary to establish the effects of massive astronomical objects on system stability.\newline
 
-This projects assumes a general understanding of forces, and the sum of forces on an object.
+After having established the object oriented program's ability to simulate multiple bodies, a \hyperref[subsec:SSsim]{full model} of all the 8 planets of the Solar System (and the Sun) is implemented and assessed through stability - measured in conservation of angular momentum. The project's main results is the successfully development of an object oriented program capable of simulating a simplified version of the solar system using all planets and Newtonian gravity, with angular momentum conserved within a margin of $6.1 \cdot 10^{-8}$. \newline
 
-I Intro: all data er henta fra NASA, med dato: posisjoner 20.oktober 2017 (for å kunne sammenlignde med årets pos)
+
+
+Lastly, the \hyperref[sec:M.effectsofrel]{effects of relativity} - which was not included in the main simulation program - is examined through a simulation of Mercury's perihelion precession. Historically, predicting the perihelion precession of Mercury, in comparison with observations, was used to test the general theory of relativity - which is why this planet is chosen for this specific test in this project. The \hyperref[subsec:effofrel]{test} however, shows that the effects are marginal within the time frames less than several centuries - and only significant when simulating the Solar System over larger time spans. \newline
+
+This projects assumes a general understanding of ODEs, Newtonian forces, object oriented coding, and basic terminology used in astronomy.  \newline
+
+All the programs written for the purpose of writing this report may be found on the authors common \href{https://github.com/johanere/CP3}{Github repository}.\newline
+
+C++ code was compiled with the optimization flag $-03$.
 
 
 \section{Methods}
@@ -251,6 +261,7 @@ Which may be reduced to \# flops$\sim n \cdot (1+j \cdot (7+2\text{(\#flops in }
   
   
 \subsection{Sun Earth system}                                                                                                               
+\label{subsec:SEsys}
 The first system used for algorithm implementation is the simplified model of the Solar System using only the Earth and the Sun, which constitutes a two body system. Newton's law of gravity \eqref{eq:M.SEsys.NLG} applied to the Earth with respect to the Sun  is assumed to govern the motion of the Earth, in other words - the effects of relativity is neglected. \newline
 
 
@@ -288,6 +299,7 @@ Furthermore, the Solar mass $M_{\odot}=1$ is set as the unit mass, which means t
 
 
 \subsection{Algorithm implementation}
+\label{subsec:algoimpl}
 Having scaled and applied the discretization template discussed under \hyperref[sec:NPs]{Numerical procedures for solving ODEs} to the Sun-Earth system, the algorithms for both the Euler's Forward method and the velocity Verlet method is now implemented into code using the Sun-Earth, with the goal of developing a functioning program. This is done using $C++$ with the Vec3 class and Solar System Shell provided through the Github page of the course Computational Physics at the University of Oslo \cite{CPgithub}. The program written for the purpose of this project may be found on the authors common \href{https://github.com/johanere/CP3}{Github repository}.\newline
 
 In order to ensure correct algorithm implementation, the initial code is written without the use of object orientation. Pending verification of successful implementation and evaluation of the numerical methods, the code will be rewritten with object orientation. More on this under \hyperref[sec:OOing]{Object orienting the code}. \newline
@@ -322,8 +334,10 @@ This, combined with the relation $\frac{d \vec{L}}{dt} = \sum_j \vec{\tau}$, imp
 The law of conservation of energy states that the total energy of an isolated system is preserved over time. Both the two body and  the multi body systems are isolated systems, and as this project does not include any energy transformations except between kinetic and potential (gravitational) energy, the sum of these quantities  is constant. \newline
 
 \subsection{On future use of the Velocity Verlet method}
-Under discussion of results, \hyperref[subsec:Init_implm]{Initial implementation}, the velocity Verlet method is established as better suited for the purpose of this project than the Euler's Forward method. In will be used in all further simulations. In addition, a number of steps $n=10^5$ appears to be an ideal trade off \textbf{eller hva? konkluder!} stability
+Under discussion of results, \hyperref[subsec:Init_implm]{Initial implementation}, the velocity Verlet method is established as better suited for the purpose of this project than the Euler's Forward method. In will be used in all further simulations. In addition, a number of steps $n=10^5$ appears to be suitable number of integration points for most purposes. Stability will be measured through conservation of angular momentum when a system consisting a system of more than two objects.
+
 \subsection{Escape velocity and effects of the gravitational force}
+\label{subsec:vesc}
 Using $n=10^5$, the velocity Verlet is now further tested. This is done by evaluating the escape velocity of a planet in a two body system with the Sun.  \newline
 
 The escape velocity, $v_{esc}$, is defined as the minimum velocity required to to escape the gravitational field of star system. This requires the planet's gravitational potential and kinetic energy to equal:
@@ -368,6 +382,7 @@ The final step before simulating the Solar System with all planets, is to test t
 After initial stability testing of the Sun-Earth-Jupiter system using the object oriented code, the mass of Jupiter, $M_J$ is increased. First by a factor of $10^1$, then by $10^3$. This is expected to have an effect on the trajectory of all three bodies; on the Sun - a more pronounced trajectory, and on Jupiter a less pronounced trajectory. In the case of the Earth, it's orbit is expected to be affected by it's relative proximity to Jupiter. Especially in the $M_J=10^3 M_J$ case. First, stability tests are executed for each case, then plots are produced, visualizing the effect on the system.
   
 \subsection{Simulating the Solar System}
+\label{subsec:SSsim}
 After having established the integrity of the applied simulation methods for multi body systems under discussion of results (\hyperref[subsec:Discofres:3B]{the three body system}), the Solar System is now simulated using all $8$ planets and the Sun. All $9$ objects are initialized using HORIZONS system data. Then, using $n=10^5$ - established as suitably stable for the multi body system implementation under discussion of results, the program is executed and the results plotted, both for $T=1yr$ and $T=10yrs$, and the stability evaluated through calculating $\epsilon_L$. 
 
  
@@ -411,18 +426,20 @@ Lastly, it is evident that Verlet conserves both energy and angular momentum for
 
    
 \begin{table}[h]
-\begin{tabular}{lllllll}
-$n=10^j$         & $j=1$      & $j=2$       & $j=3$       & $j=4$         & $j=5$          & $j=6$           \\
-Forward Euler    &            &             &             &               &                &                 \\
-Runtime {[}ms{]} & 0.02       & 0.03        & 0.16        & 1.48$\pm$0.01 & 15.03$\pm$0.04 & 133.15$\pm$3.28 \\
-$\epsilon_r$     & 3.67604    & 0.712392    & 0.076873    & 0.00787107    & 0.000794016    & 8.39334e-05     \\
-$\epsilon_E$     & 1.47043    & 0.347594    & 0.0683006   & 0.00777134    & 0.000788617    & 7.76796e-05     \\
-$\epsilon_L$     & 3.39498    & 0.229527    & 0.0359955   & 0.00390459    & 0.000392581    & 3.71361e-05     \\
-Velocity Verlet  &            &             &             &               &                &                 \\
-Runtime {[}ms{]} & 0.01       & 0.03        & 0.24        & 2.40$\pm$0.02 & 24.28$\pm$0.08 & 198.00$\pm$3.62 \\
-$\epsilon_r$     & 0.186713   & 0.00197411  & 2.02018e-05 & 8.62426e-07   & 6.99042e-07    & 6.99806e-07     \\
-$\epsilon_E$     & 0.0248946  & 3.37737e-06 & 0           & 0             & 0              & 0               \\
-$\epsilon_L$     & 0.00585689 & 0           & 0           & 0             & 0              & 0              
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+$n=10^j$         & $j=1$      & $j=2$       & $j=3$       & $j=4$         & $j=5$          & $j=6$           \\\hline
+\textbf{Forward Euler}    &            &             &             &               &                &                 \\\hline
+Runtime {[}ms{]} & 0.02       & 0.03        & 0.16        & 1.48$\pm$0.01 & 15.03$\pm$0.04 & 133.15$\pm$3.28 \\\hline
+$\epsilon_r$     & 3.68    & 0.71    & 0.08    & 7.87e-03   & 7.94e-4    & 8.39e-05     \\\hline
+$\epsilon_E$     & 1.47   & 0.35    & 0.07  & 7.77e-03    & 7.8e-4    & 7.78e-05     \\\hline
+$\epsilon_L$     & 3.39    & 0.23    & 0.04   & 3.90e-03    & 3.93e-4    & 3.71e-05     \\\hline
+\textbf{Velocity Verlet}  &            &             &             &               &                &                 \\\hline
+Runtime {[}ms{]} & 0.01       & 0.03        & 0.24        & 2.40$\pm$0.02 & 24.28$\pm$0.08 & 198.00$\pm$3.62 \\\hline
+$\epsilon_r$     & 0.19   & 1.97e-3  & 2.02e-05 & 8.62e-07   & 6.99e-07    & 7.00e-07     \\\hline
+$\epsilon_E$     & 0.03  & 3.38-06 & 0           & 0             & 0              & 0               \\\hline
+$\epsilon_L$     & 0.01 & 0           & 0           & 0             & 0              & 0              
+\\ \hline
 \end{tabular}
 \caption{Comparison in $ms$ of run time, $\epsilon_r$, $\epsilon_E$, and $\epsilon_L$, between the Euler's forward method and the The velocity Verlet method implementations as a function of number of steps $n$ in $T=1 yr$}
 \label{tab:EulerVsVerlet}
@@ -455,6 +472,7 @@ orbit still not closed.
 \end{figure}  
 
 \subsection{Object Orientation: Verifying integrity of methods} 
+\label{subsec:OOverification}
 Figure \ref{fig:twobodyplotOO} visualises the Sun-Earth system solved for $T=1$ using the object oriented code with $n=10^5$. The solution appears to satisfy the expected results; circular orbit with $r\approx 1$ AU. With $n=10^5$ and $T=1$, $\epsilon_L=3.8 \cdot 10^{-6}$, more on this under discussion of results.
 
 \begin{figure}[!htb]
@@ -477,10 +495,10 @@ Figure \ref{fig:ESJ} shows the Sun-Earth-Jupiter system using object oriented co
 
 Table \ref{tab:ESJtable}
 \begin{table}[]
-\begin{tabular}{lllllll}
-$n=10^j$                                & $j=1$                  & $j=2$                  & $j=3$                  & $j=4$                  & $j=5$                 & $j=6$                 \\
-Velocity Verlet                      &                        &                        &                        &                        &                       &                       \\
-$\epsilon_L$ & 1.9e-4 & 1.8e-05 & 1.8e-06 & 2.5e-07 & 2.1e-07 & 9.6e-08 \\
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+$n=10^j$                                & $j=1$                  & $j=2$                  & $j=3$                  & $j=4$                  & $j=5$                 & $j=6$                 \\ \hline
+$\epsilon_L$ & 1.9e-4 & 1.8e-05 & 1.8e-06 & 2.5e-07 & 2.1e-07 & 9.6e-08 \\ \hline
 \end{tabular}
 \caption{$\epsilon_L$ as a function of $n$ for the Sun-Earth-Jupiter system over $T=6yrs$}
 \label{tab:ESJtable}
@@ -507,24 +525,25 @@ In the $M_J=10^1 M_J$ case $\epsilon_L= 3.0 \cdot 10^{-6}$, while in the $M_J=10
 
 
 
-\subsection{Solar System:verifying integrity of implementation}
-Figures \ref{fig:ssplotT=1} and \ref{fig:fig:ssplotT=10} shows simulations of the Solar System with all 8 planets and the Sun, first for $T=1yr$, then for $T=10yrs$. Both simulations had $\epsilon_L=6.1 \cdot 10^{-8}$. The trajectories of the outermost planets are not complete ellipses, due to the timespan.
+\subsection{Solar System: Verifying integrity of implementation}
+Figures \ref{fig:ssplotT1} and \ref{fig:ssplotT10} shows simulations of the Solar System with all 8 planets and the Sun, first for $T=1yr$, then for $T=10yrs$. Both simulations had $\epsilon_L=6.1 \cdot 10^{-8}$. The trajectories of the outermost planets are not complete ellipses, due to the timespan.
 
 \begin{figure}[!htb]
         \centering 
          \includegraphics[scale=.6]{../Results/SolarSyst9BodiesNj5T1.png} 
         \caption{Plot of the Solar System with all planets includes over $T=1 yr$ and $n=10^5$}
-        \label{fig:ssplotT=1}   
+        \label{fig:ssplotT1}   
 \end{figure}  
 
 
-Figure \ref{fig:ssplotT=1}
 \begin{figure}[!htb]
         \centering 
          \includegraphics[scale=.6]{../Results/SolarSyst9BodiesNj5T10.png} 
         \caption{Plot of the Solar System with all planets includes over $T=10 yr$ and $n=10^5$}
-        \label{fig:ssplotT=10}   
+        \label{fig:ssplotT10}   
 \end{figure}  
+
+
 
 
 
@@ -543,7 +562,7 @@ In regards to runtime, Euler is faster than Verlet, just as expected, since the 
 
 Both energy and angular momentum is conserved for $n=10^5$ when using the Verlet based algorithm. This is a requirement when simulating such systems as this project focuses on (as explained under \hyperref[subsec:ev_of_init_impl]{Evaluation of initial implementasjon}), further empathizing that the velocity Verlet method is better suited for this project. \newline
 
-Because $\epsilon_r$ is an unsuitable measurement when a multi body system is examined (due to complexity of analytical solution), conservation of angular momentum is instead defined as the stability measurement to be used for all other purposes in this project. It is however important to note that angular momentum is conserved when $\epsilon_r$ is $\sim 0.002$ - which may indicate that the instability threshold increases when measured through conservation of angular momentum. 
+Because $\epsilon_r$ is an unsuitable measurement when a multi body system is examined (due to complexity of analytical solution), conservation of angular momentum is instead defined as the stability measurement to be used for all other purposes in this project. It is however important to note that angular momentum is already conserved when $\epsilon_r$ is $\sim 0.002$ - which may indicate that the instability threshold increases when measured through conservation of angular momentum. 
 
 \subsection{Escape velocity}
 As described in the Results section, it is difficult to discern whether the Earth has in fact  acheived $v_{esc}$ or simply entered an orbit with a very large aphelion. However, since the system in question is isolated, and not limited in space - that is; the force from the Sun will always affect the Earth, no matter the distance - it is in fact impossible to ascertain a precise numerical $v_{esc}$. On the other hand, machine representation of the force would eventually lead to $|F_g|=0$. With this in mind, visual inspection of plot reveals that $ v_0=2\pi+2.6$ yields a trajectory that, for all practical purposes, results in the Earth leaving the Solar System. Therefore, numerical $v_{esc}$ is evaluated to $ 2pi+2.6 = 8.88319$. This deviates from the analytical solution by $~10^{-2}$.
@@ -561,15 +580,16 @@ The initial test, ie. the plot, showing the Sun-Earth-Jupiter system, shows elli
 When altering the mass of Jupiter, the Earth's trajectory is notably affected - it's pulled toward Jupiter with a stronger force than usual, as expected. In addition, the Sun's trajectory becomes more pronounced as a natural consequence of the increased gravitational force between Jupiter and the Sun. In reality, $ M_{J}\approx 955 \cdot 10^{-6} M_{\odot}$. From this, it's easy to see that an increase in the mass by a factor of $10^3$ would make the relative masses of the Sun and Jupiter quite close - resulting in a wildly different system than the one dominated by the mass of the Sun. Both mass increases have a notable affect on stability (measured in $\epsilon_L$) - however, in the $M_J=10^3 \cdot M_J$ case, it may no longer be said that the angular momentum is preserved. This project draws no conclusions on whether this is due to some deviations in initial values, or the a fault in time evolution of the system. All in all, the three body system is evaluated as successfully simulated, with the cavity that the effects of massive astronomical objects on the system stability should be further examined.
 
 \subsection{Solar system}
-Figures \ref{fig:ssplotT=1} and \ref{fig:fig:ssplotT=10} both show the same tendency: a stable multi body system with orbits that are dominated by the attractive force from the Sun - no planets appear to be either escaping the Solar System, or falling out of orbit and into the Sun. As $\epsilon_L$ is approximately zero, the simulation is evaluated to be successful. 
+Figures \ref{fig:ssplotT1} and \ref{fig:ssplotT10} both show the same tendency: a stable multi body system with orbits that are dominated by the attractive force from the Sun - no planets appear to be either escaping the Solar System, or falling out of orbit and into the Sun. As $\epsilon_L$ is approximately zero, the simulation is evaluated to be successful. 
 
-\subsection{---Effects of relativty---}
-beskriv avviket på vinkel. Er det viktig å ta med generell relativitet?
+\subsection{Effects of relativity}
+\label{subsec:effofrel}
+When examining the perihelion precession of Mercury produced by both the Newtonian gravity and the force with relativistic correction, the Newtonian gravity was found to produce results close to the observed value ($43''$). This is most likely some fault in implementation of the relativity corrected force. However, as the Newtonian gravity produced results ($26''$) within the same order of magnitude as the observed value, the effects of relativity on the Solar System simulation may be discarded as negligible for any time frame less than several centuries.
 
 \section{Conclusions}
-This project concludes that the velocity Verlet method is superior to the Euler's Forward method when simulating systems govern by the gravitational force between object, having produced results with a an absolute error of $\approx 7 \cdot 10^{-07}$ over $n=10^5$ integration points. In addition, the Velocity Verlet method was found to conserve both total angular momentum and the sum of potential and kinetic energy within a small margin ($\sim 10^{-7}$) in most cases for $n=10^5$ integration points, making it a suitable method for application to multi body systems. \newline
+This project concludes that the velocity Verlet method is superior to the Euler's Forward method when simulating systems govern by the gravitational force between object, having produced results with a an absolute error of $\approx 7 \cdot 10^{-07}$ over $n=10^5$ integration points. In addition, the Velocity Verlet method was found to conserve both total angular momentum and the sum of potential and kinetic energy within a small margin ($\sim 10^{-7}$) in most cases for $n=10^5$ integration points, making it a suitable method for application to multi body systems. Simultaneously, the Euler's Forward method was found to be approximately $1.5$ times faster than the velocity Verlet method, but discarded for further use due to greater inaccuracy. \newline
 
-The main program developed in this project was determined to successfully simulate a simplified model of  the solar system using all planets and Newtonian gravity - evaluated through conservation of angular momentum within a margin of $6.1 \cdot 10^{-8}$.  However, certain discrepancies in the methods applied and the results produced means that future examination of the three body system is necessary to establish the effects of massive astronomical objects on system stability.
+The main program developed in this project was determined to successfully simulate a simplified model of  the solar system using all planets and Newtonian gravity - evaluated through conservation of angular momentum within a margin of $6.1 \cdot 10^{-8}$.  The effects of neglecting relativity in the model were determined to be minimal for any time frame less than hundreds of years. However, certain discrepancies in the methods applied, and the results produced, means that future examination of the three body system is necessary to firmly establish the effects of massive astronomical objects on system stability. 
 
 \bibliographystyle{plain}
 \bibliography{ref}
