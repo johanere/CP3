@@ -134,46 +134,35 @@ Simulating the Solar System using ordinary differential equations
 
 % --- begin date ---
 \begin{center}
-Sep 8, 2018
+Sep 24, 2018
 \end{center}
 % --- end date ---
 
 \vspace{1cm}
 
+\section{Abstract}
+
+The overall aim of this project is to develop a program that simulates the Solar System by numerically solving equations that describe the trajectory of the planets and the Sun.  The main program developed in this project was determined to successfully simulate a simplified model of  the solar system using all planets and Newtonian gravity - evaluated through conservation of angular momentum within a margin of $6.1 \cdot 10^{-8}$.
+
 \section{Introduction}
-ØK MARGINEN!
-
-
-\textbf{Legg till litt mer om motivasjon for prosjektet} \newline
 The overall aim of this project is to develop a program that simulates the Solar System by numerically solving equations that describe the trajectory of the planets and the Sun. The motion of each of these objects is subject to the sum of forces acting upon that object, and it's trajectory may be described through a set of coupled ordinary differential equations (ODEs). \newline
 
+First, this project describes two numerical procedure for solving ODEs; the velocity Verlet and Euler's Forward method (\hyperref[sec:NPs]{here}. After describing the numerical procedures, the projects goes on to developing algorithms for both numerical methods \hyperref[sec:NPalgo]{here}. Then, an examination of a simplified model of the Solar System, consisting of the Sun and the Earth, is carried out. Having described this system, a set of coupled ODEs are extracted, and the algorithms for the numerical procedures applied through code implementation using $C++$ - due to it's well established affinity for code optimization. \newline
 
+Following the program development, both of the numerical procedures are evaluated, emphasizing stability and runtime, and prioritizing stability over speed - upon which the velocity Verlet was decided upon as the most suitable method, with a an absolute error of $\approx 7 \cdot 10^{-07}$ over $n=10^5$ integration points. In term of run time, the Euler's method was found to be approximately $1.5$ times faster than the velocity Verlet method. In addition, the Velocity Verlet method was found to conserve both total angular momentum and the sum of potential and kinetic energy within a small margin ($\sim 10^{-7}$) in most cases for $n=10^5$ integration points. \newline
 
-. \newline
-First, choice of numerical procedure (for solving the ODEs) is decided upon, empathizing run time and stability. In this project, both the velocity Verlet and Forward Euler method (\hyperref[sec:NPs]{here}) were evaluated - upon which the velocity verlet was decided upon as the most suitable method due to \textbf{kort beskrivelse av hvorfor Verlet ble valgt}\newline
+After having established a choice of numerical procedure, the project goes on to testing the implementation through evaluation of escape velocity and the effects of gravity on the trajectory of the Earth. Then, the initial code is further developed by applying object orientation methods, upon which tests for code integrity are carried out. \newline
 
-After describing the procedures, algorithms using both methods were developed (\hyperref[sec:NPalgo]{here}). \newline
+Upon verification of code integrity through the object orientation process, the model of the Solar System is expanded to include multiple bodies. Jupiter is added to the system, and the object oriented program is re-run in order to verify stability when simulating multiple bodies. In addition, the effects of Jupiter's mass is more closely examined through running simulations where it's mass was increased. \newline
 
-Having developed algorithms, both algorithms were tested in a prototype program using a simplified version of the Solar System, described in detail \hyperref[sec:NPalgo]{here}.
+After having established the object oriented program's ability to simulate multiple bodies, a full model of all the 8 planets of the Solar System (and the Sun) is implemented and assessed through stability - measured in conservation of angular momentum. The project's main results is the successfully development of an object oriented program capable of simulating a simplified version of the solar system using all planets and Newtonian gravity, with angular momentum conserved within a margin of $6.1 \cdot 10^{-8}$. \newline
 
+Lastly, the effects of relativity - which was not included in the main simulation program - is examined through a simulation of Mercury's perihelion precession. Historically, predicting the perihelion precession of Mercury, in comparison with observations, was used to test the general theory of relativity - which is why this planet is chosen for this specific test in this project. The test however, shows that the effects are marginal within the time frames used in this project - and only significant when simulating the Solar System over larger time spans. \newline
 
-All sims run over one year, except last stuff
+This projects assumes a general understanding of forces, and the sum of forces on an object.
 
 I Intro: all data er henta fra NASA, med dato: posisjoner 20.oktober 2017 (for å kunne sammenlignde med årets pos)
 
-
-1. Finn metode for simulering (Sun/Earth)
-2. Implementer generell M-body algoritme (solsystemet)
-3. Simuler hele solsystemet
-4. Hva med relativitet?
-
-assumes general understanding of forces, and the sum of forces on an object.
-
-first prog: 2d, OO3d, plotting in 2d (xy axis)
-
- important test
-of the general theory of relativity was to compare its prediction for the perihelion
-precession of Mercury to the observed value.
 
 \section{Methods}
 
@@ -376,12 +365,11 @@ Masses and velocities are also extracted from the HORIZONS system interface and 
 \label{sec:Modmultibody}
 The final step before simulating the Solar System with all planets, is to test the object oriented code using a three body system. This is carried out by adding the Sun, the Earth, and Jupiter to the system class, using HORIZONS system data as described above. The system is solved using the velocity Verlet function from the Solver class on a selection of $n$, and the stability of the solution is evaluated by conservation of angular momentum, which is established as a suitable stability measurement in the discussion of results section under \hyperref[subsec:Discofres:initimpl]{Inital implementation}. \newline
 
-After initial stability testing of the Sun-Earth-Jupiter system using the object oriented code, the mass of Jupiter, $M_J$ is increased. First by a factor of $10^1$, then by $10^3$. This is expected to have an effect on the trajectory of all three bodies; on the Sun - a pronounced trajectory, on Jupiter - a pronounced trajectory, and on the Earth - \textbf{SOMETHING??}. Especially in the $M_J=10^3 M_J$ case. First, stability tests are executed for each case, then plots are produced, visualizing the effect on the system.
+After initial stability testing of the Sun-Earth-Jupiter system using the object oriented code, the mass of Jupiter, $M_J$ is increased. First by a factor of $10^1$, then by $10^3$. This is expected to have an effect on the trajectory of all three bodies; on the Sun - a more pronounced trajectory, and on Jupiter a less pronounced trajectory. In the case of the Earth, it's orbit is expected to be affected by it's relative proximity to Jupiter. Especially in the $M_J=10^3 M_J$ case. First, stability tests are executed for each case, then plots are produced, visualizing the effect on the system.
   
 \subsection{Simulating the Solar System}
-After having established the integrity of the applied simulation methods for multi body systems under discussion of results (\hyperref[subsec:Discofres:3B]{the three body system}), the Solar System is now simulated using all $8$ planets and the Sun. All $9$ objects are initialized using HORIZONS system data. Then, using $n=$ \textbf{HVA DA?} - established as suitably stable for the multi body system implementation under discussion of results, the program is executed and the results plotted. \textbf{NOE MER?}
+After having established the integrity of the applied simulation methods for multi body systems under discussion of results (\hyperref[subsec:Discofres:3B]{the three body system}), the Solar System is now simulated using all $8$ planets and the Sun. All $9$ objects are initialized using HORIZONS system data. Then, using $n=10^5$ - established as suitably stable for the multi body system implementation under discussion of results, the program is executed and the results plotted, both for $T=1yr$ and $T=10yrs$, and the stability evaluated through calculating $\epsilon_L$. 
 
-\textbf{check for stability?}
  
 \subsection{Effects of relativity}
 \label{sec:M.effectsofrel}
@@ -394,20 +382,13 @@ F_G=\frac{GM_{\odot}M_{mercury}}{r^2}\Big[1+\frac{3l^2}{r^2c^2}\Big]
 \label{eq:M.relativity}
 \end{equation}
 
-The modified force is introduced into a modified version of the already well tested initial two body system program. Mercury is set to start at perihelion on the $x$ axis with $r=0.3075$ AU, and $u_0$ set to $12.44$ AU/yr \cite{HJ-expaper}. Then, the system is solved for $T=100 \text{ }yr$, using $N=10^6$. \textbf{10 i 6?} \newline
+The modified force is introduced into a version of the already well tested initial two body system program. Mercury is set to start at perihelion on the $x$ axis with $r=0.3075$ AU, and $u_0$ set to $12.44$ AU/yr \cite{HJ-expaper}. Then, the system is solved for $T=100 \text{ }yr$, using $n=10^5$. \textbf{10 i 6?} \newline
 
 The perihelion angle, $\theta_p$, is calculated using $\theta_p=\frac{y_p}{x_p}$ ,where $x_p$, $y_p$ are the perihelion values of $x$ and $y$. This calculated value is then compared to the observed value.\ newline
 
 Subtracting all classical effects (such as the perturbation of the orbit due
 to gravitational attraction from the other planets), the observed value of the perihelion
-precession is $43''$ per century \cite{HJ-expaper}. The program's ability to reproduce this will determine 
-
-\textbf{må forklares litt mer her}
-precession of Mercury to the observed value.  the noe of mercus is now examined.
- 4. Kjør Sol og merkur
-- Aphelion/Perihelion beskrive ( og vinkel perihelion)
-- Forklar generell relativitet ledd i kraft
-
+precession is $43''$ per century \cite{HJ-expaper}. The program's ability to reproduce this will determine whether the simulation of the Solar System should have taken relativity into account or not. In order to do so, the two body system consisting of the Sun and Mercury is simulated using Newtonian gravity. Then, the program is modified to use the expression from \label{eq:M.relativity}. Both simulations are executed with, $n=10^7$ and $T=100yrs$.
 
 
 
@@ -483,14 +464,14 @@ Figure \ref{fig:twobodyplotOO} visualises the Sun-Earth system solved for $T=1$ 
         \label{fig:twobodyplotOO}   
 \end{figure}  
 
-\subsection{Three Body system: Verifying integrity of implementation}
-Figure \ref{fig:twobodyplotOO} shows the Sun-Earth-Jupiter system using object oriented code with $n=10^5$ and $T=6 yrs$. It's clear that the orbits of both the Earth and Jupiter is elliptical. In addition, angular momentum was preserved within a reasonable margin. Examining table \ref{tab:ESJtable}, which displays $\epsilon_L$ as a function of $n$, it is  clear that $\epsilon_L$ is within $\sim 2\cdot 10^{-4}$, even for small values of $n$. For $n=10^5$, $\epsilon_L$ is $\sim 2 \cdot 10^{-7}$.
+\subsection{Three body system: Verifying integrity of implementation}
+Figure \ref{fig:ESJ} shows the Sun-Earth-Jupiter system using object oriented code with $n=10^5$ and $T=6 yrs$. It's clear that the orbits of both the Earth and Jupiter is elliptical. In addition, angular momentum was preserved within a reasonable margin. Examining table \ref{tab:ESJtable}, which displays $\epsilon_L$ as a function of $n$, it is  clear that $\epsilon_L$ is within $\sim 2\cdot 10^{-4}$, even for small values of $n$. For $n=10^5$, $\epsilon_L$ is $\sim 2 \cdot 10^{-7}$.
 
 \begin{figure}[!htb]
         \centering 
-         \includegraphics[scale=.6]{../Results/OOthreeBodyEarthSunJupiter.png} 
+         \includegraphics[scale=.6]{../Results/OOthreeBodyEarthSun1Jupiterj5T6.png} 
         \caption{Plot of the Sun-Earth-Jupiter system using object oriented code with $n=10^5$ and $T=6 yrs$},
-        \label{fig:twobodyplotOO}   
+        \label{fig:ESJ}   
 \end{figure}  
 
 
@@ -506,16 +487,29 @@ $\epsilon_L$ & 1.9e-4 & 1.8e-05 & 1.8e-06 & 2.5e-07 & 2.1e-07 & 9.6e-08 \\
 \end{table}
 
 
-Kommentar:
-For T=12, total angulær moment holdes stabilt lenge, men 
-feilen øker mot slutten av simulering. Holdes konstant for lavere T, f.eks 6 slik tabellen viser.
-2.1 - Plot ESJ oppå ES
-    - For en N som tidligere har vært stabil - presenter momentumbevaring. Samme toleranse? Må vi øke N for samme stabilitet?
-\subsection{----Multi Body: The effects of another object on the Earth's trajectory---}
-    - plot for jupmassse x10 og x1000
+\subsection{Three body system: The effects of another object on the Earth's trajectory}
+Figures \ref{fig:ESJm10} and \ref{fig:ESJm1000} shows the result of simulating the Sun-Earth-Jupiter system with $n=10^5$ and $T=6 yrs$, for $M_J=10^1 \cdot M_J$ and $M_J=1031 \cdot M_J$. In the $M_J=10^1 \cdot M_J$ case, the orbits are only slightly different from the one shown in figure \ref{fig:ESJ}. The movement of the Sun is however more pronounced, and the orbit of the Earth is varies for each completed orbit. In the $M_J=10^3 M_J$ case, the trajectories are significantly different, and the system appears  to evolve similar to a two body system made up of two objects with slightly different masses. The orbit of the Earth around the Sun, is visibly affected by the proximity to Jupiter. \newline
 
-\subsection{----Solar System:verifying integrity of implementation--- }
-Figure \ref{fig:ssplotT=1}
+In the $M_J=10^1 M_J$ case $\epsilon_L= 3.0 \cdot 10^{-6}$, while in the $M_J=10^3 M_J$ case $\epsilon_L=1.4$
+
+\begin{figure}[!htb]
+        \centering 
+         \includegraphics[scale=.6]{../Results/OOthreeBodyEarthSun10Jupiterj5T6.png} 
+        \caption{Plot of the Sun-Earth-Jupiter system, with $M_J=10^1 \cdot M_J$ with $n=10^5$ and $T=6 yrs$},
+        \label{fig:ESJm10}   
+\end{figure}  
+\begin{figure}[!htb]
+        \centering 
+         \includegraphics[scale=.6]{../Results/OOthreeBodyEarthSun1000Jupiterj5T6.png} 
+        \caption{Plot of the Sun-Earth-Jupiter system, with $M_J=10^3 \cdot M_J$ with $n=10^5$ and $T=6 yrs$},
+        \label{fig:ESJm1000}   
+\end{figure}  
+
+
+
+\subsection{Solar System:verifying integrity of implementation}
+Figures \ref{fig:ssplotT=1} and \ref{fig:fig:ssplotT=10} shows simulations of the Solar System with all 8 planets and the Sun, first for $T=1yr$, then for $T=10yrs$. Both simulations had $\epsilon_L=6.1 \cdot 10^{-8}$. The trajectories of the outermost planets are not complete ellipses, due to the timespan.
+
 \begin{figure}[!htb]
         \centering 
          \includegraphics[scale=.6]{../Results/SolarSyst9BodiesNj5T1.png} 
@@ -524,21 +518,18 @@ Figure \ref{fig:ssplotT=1}
 \end{figure}  
 
 
-- Stabilitetssjekk: Angmom bevart? 
+Figure \ref{fig:ssplotT=1}
+\begin{figure}[!htb]
+        \centering 
+         \includegraphics[scale=.6]{../Results/SolarSyst9BodiesNj5T10.png} 
+        \caption{Plot of the Solar System with all planets includes over $T=10 yr$ and $n=10^5$}
+        \label{fig:ssplotT=10}   
+\end{figure}  
 
-\subsection{---Effects of relativity---}
-4. Kjør Sol (flytende sol) og merkur 
-- finn vinkel etter 100 år med newtonsk
-- finn vinkel etter 100 år med generell relativitet
 
-. You may use that the speed of Mercury
-at perihelion is 12.44 AU/yr, and that the distance to the Sun at perihelion
-is 0.3075 AU.
-You need to make sure that the time resolution used in your
-simulation is sufficient, for example by checking that the perihelion precession
-you get with a pure Newtonian force is at least a few orders of magnitude smaller
-than the observed perihelion precession of Mercury. Can the observed perihelion
-precession of Mercury be explained by the general theory of relativity
+
+\subsection{Effects of relativity}
+Perihelion precession using the Newtonian gravity over $T=100yrs$ and $n=10^7$ integration points, was found to be $\theta=26''$, while the force using relativistic correction produces a $\theta=10''$
 
 \section{Discussion of results}
 \subsection{Initial implementation}
@@ -563,24 +554,22 @@ As expected, increasing $\beta$'s increase $r$ over time. Although several value
 \subsection{Object Orientation: Verifying integrity of methods} 
 As shown in the results section, the object orientation of the code appears to have been successfully. However, the implementation was not tested in depth for run time, $\epsilon_r$, and $\epsilon_E$ - so there may have been some (smaller) deviations from the results produced by the non object oriented code that have not been measured. However, $\epsilon_L$ was measured, with a small ($3.8 \cot 10^6$) deviation from $0$. This deviation may be because the Sun was initialized with HORIZON system data, and not fixed at the origin. Despite the deviation in $\epsilon_L$, the object orientation is therefore said to be successful.
 
-\subsection{The three body system}
+\subsection{Three body system}
 \label{subsec:Discofres:3B}
-The initial test, ie. the plot, showing the Sun-Earth-Jupiter system, shows elliptical orbits as expected. By also taking the fact that angular momentum was conserved into account, the three body system implementation appears to be successful. Examination of table \ref{tab:ESJtable} further supports this. The deviation seen in $\epsilon_L$ both in the Sun-Earth-Jupiter simulation, and previous simulations utilizing the object oriented code may be a result of using HORIZON system data; their barycenter (origin) is presumably the mass center of a more populated system than the one used in this project. This means that the initial values used in this project are not necessarily accurate. On the other hand, the (small) deviations in $\epsilon_L$ may also very well stem from inaccurate algorithm implementation.
+The initial test, ie. the plot, showing the Sun-Earth-Jupiter system, shows elliptical orbits as expected. By also taking the fact that angular momentum was conserved into account, the three body system implementation appears to be successful. Examination of table \ref{tab:ESJtable} further supports this. The deviation seen in $\epsilon_L$ both in the Sun-Earth-Jupiter simulation, and previous simulations utilizing the object oriented code may be a result of using HORIZON system data; their barycenter (origin) is presumably the mass center of a more populated system than the one used in this project. This means that the initial values used in this project are not necessarily accurate. On the other hand, the (small) deviations in $\epsilon_L$ may also very well stem from inaccurate algorithm implementation. \newline
 
-\subsubsection{Integrity of methods}
--Verlet funker med 3 bodies
-- se at jordas bane (og solas) blir i økende grav påvirka.
-\subsubsection{Effects on Earth's trajectory}
+When altering the mass of Jupiter, the Earth's trajectory is notably affected - it's pulled toward Jupiter with a stronger force than usual, as expected. In addition, the Sun's trajectory becomes more pronounced as a natural consequence of the increased gravitational force between Jupiter and the Sun. In reality, $ M_{J}\approx 955 \cdot 10^{-6} M_{\odot}$. From this, it's easy to see that an increase in the mass by a factor of $10^3$ would make the relative masses of the Sun and Jupiter quite close - resulting in a wildly different system than the one dominated by the mass of the Sun. Both mass increases have a notable affect on stability (measured in $\epsilon_L$) - however, in the $M_J=10^3 \cdot M_J$ case, it may no longer be said that the angular momentum is preserved. This project draws no conclusions on whether this is due to some deviations in initial values, or the a fault in time evolution of the system. All in all, the three body system is evaluated as successfully simulated, with the cavity that the effects of massive astronomical objects on the system stability should be further examined.
 
-\subsection{---Solar system---}
-\subsubsection{Integrity of methods}
-- Ser plottet ut som forventa? Noen planeter ikke fullført bane -> de bruker lengre tid enn 1 yr!
-- Stabilitetssjekk: Angmom bevart ved en viss N med lik nøyaktighet som før?
+\subsection{Solar system}
+Figures \ref{fig:ssplotT=1} and \ref{fig:fig:ssplotT=10} both show the same tendency: a stable multi body system with orbits that are dominated by the attractive force from the Sun - no planets appear to be either escaping the Solar System, or falling out of orbit and into the Sun. As $\epsilon_L$ is approximately zero, the simulation is evaluated to be successful. 
 
-- sucessfully simulated a simplified version of the solar system using all planets and newtonian gravity - not accounted for relativty and other astronomical objects 
 \subsection{---Effects of relativty---}
 beskriv avviket på vinkel. Er det viktig å ta med generell relativitet?
+
 \section{Conclusions}
+This project concludes that the velocity Verlet method is superior to the Euler's Forward method when simulating systems govern by the gravitational force between object, having produced results with a an absolute error of $\approx 7 \cdot 10^{-07}$ over $n=10^5$ integration points. In addition, the Velocity Verlet method was found to conserve both total angular momentum and the sum of potential and kinetic energy within a small margin ($\sim 10^{-7}$) in most cases for $n=10^5$ integration points, making it a suitable method for application to multi body systems. \newline
+
+The main program developed in this project was determined to successfully simulate a simplified model of  the solar system using all planets and Newtonian gravity - evaluated through conservation of angular momentum within a margin of $6.1 \cdot 10^{-8}$.  However, certain discrepancies in the methods applied and the results produced means that future examination of the three body system is necessary to establish the effects of massive astronomical objects on system stability.
 
 \bibliographystyle{plain}
 \bibliography{ref}
