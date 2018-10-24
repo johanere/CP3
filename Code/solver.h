@@ -18,7 +18,7 @@ public:
     // Destructor
     ~Solver() {}
 
-    void EulerSolve(int T, int N, int printstep);
+    void VerletSolve(int T, int N, int printstep);
 
 };
 
