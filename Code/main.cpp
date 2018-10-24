@@ -59,40 +59,7 @@ int main(int argc, char * argv[])
     Solver Sol(SunEarth,force);
 
 
-    Sol.EulerSolve(T, N, printstep);
-
-
-
-
-/*
-    Solver sol(SunEarth); //construct solver (should be *sol= new Solver(SunEarth,N)? )
-    sol.EulerSolve(N); //solves and prints solution to outfile
-
-
-
-
-
-    cout << "Number of bodies in the solar system is: " << S.bodies.size() << endl;
-
-    // Prints start position
-    S.bodies[1]->printObject();
-
-    for (int iStep = 0; iStep < NSteps; iStep++)
-    {
-        S.resetForces(); // Since we only stores one step at the time...
-        force.calculateForces(&S);
-        integrator.integrate(&S, h);
-
-        for (int iObj = 0; iObj < S.bodies.size(); iObj++)
-        {
-            S.bodies[iObj]->printObject();
-        }
-
-    }
-
-    // Prints end position, which should be approximately the same as the start
-    S.bodies[1]->printObject();
-*/
+    Sol.VerletSolve(T, N, printstep);
 
     return 0;
 }
