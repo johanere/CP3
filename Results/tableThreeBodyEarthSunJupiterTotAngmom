@@ -7,3 +7,8 @@ Velocity Verlet T=12                    &                        &              
 \textbackslash{}epsilon\_\{L\_\{tot\}\} & 0.0007043509262868803  & 0.0011755985172545403  & 0.0011994022947577777  & 0.0012017465689919472  & 0.0012017116699865492 & 0.0012019368268135914
 \end{tabular}
 \end{table}
+
+
+Kommentar:
+For T=12, total angulær moment holdes stabilt lenge, men 
+feilen øker mot slutten av simulering. Holdes konstant for lavere T, f.eks 6 slik tabellen viser.
