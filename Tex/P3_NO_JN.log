@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  24 OCT 2018 21:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  24 OCT 2018 22:15
 entering extended mode
 **./P3_NO_JN.tex
 (P3_NO_JN.tex
@@ -584,7 +584,11 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 \RaggedLeftParindent=\skip82
 \RaggedRightParindent=\skip83
 \JustifyingParindent=\skip84
-) (P3_NO_JN.aux)
+) (P3_NO_JN.aux
+
+LaTeX Warning: Label `fig:twobodyplotOO' multiply defined.
+
+)
 \openout1 = `P3_NO_JN.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
@@ -602,8 +606,7 @@ LaTeX Font Info:    ... okay on input line 99.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.
 LaTeX Font Info:    ... okay on input line 99.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 99.
-
-(C:\Johan\Miktex\tex\latex\lm\t1lmr.fd
+ (C:\Johan\Miktex\tex\latex\lm\t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (C:\Johan\Miktex\tex\context\base\supp-pdf.mkii
@@ -924,61 +927,85 @@ Overfull \hbox (109.30618pt too wide) in paragraph at lines 433--446
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [12]
-<../Results/vesc6betas.png, id=288, 578.16pt x 578.16pt>
+<../Results/VescAllOnePlotnj5T10.png, id=289, 578.16pt x 578.16pt>
+File: ../Results/VescAllOnePlotnj5T10.png Graphic file (type png)
+<use ../Results/VescAllOnePlotnj5T10.png>
+Package pdftex.def Info: ../Results/VescAllOnePlotnj5T10.png  used on input lin
+e 456. on input line 456.
+Package pdftex.def Info: Requested size: 289.07928pt x 289.07928pt on input lin
+e 456.
+ [13 <../Results/twoBodyNOOplot1.png>] [14 <../Results/VescAllOnePlotnj5T10.png
+>]
+<../Results/vesc6betas.png, id=303, 578.16pt x 578.16pt>
 File: ../Results/vesc6betas.png Graphic file (type png)
 <use ../Results/vesc6betas.png>
-Package pdftex.def Info: ../Results/vesc6betas.png  used on input line 462. on 
-input line 462.
+Package pdftex.def Info: ../Results/vesc6betas.png  used on input line 471. on 
+input line 471.
 Package pdftex.def Info: Requested size: 289.07928pt x 289.07928pt on input lin
-e 462.
- [13 <../Results/twoBodyNOOplot1.png>]
-
-LaTeX Warning: Text page 14 contains only floats.
-
-[14 <../Results/vesc6betas.png>]
-<../Results/SunEarthOONj5T1png.png, id=302, 462.528pt x 346.896pt>
+e 471.
+<../Results/SunEarthOONj5T1png.png, id=305, 462.528pt x 346.896pt>
 File: ../Results/SunEarthOONj5T1png.png Graphic file (type png)
 <use ../Results/SunEarthOONj5T1png.png>
 Package pdftex.def Info: ../Results/SunEarthOONj5T1png.png  used on input line 
-472. on input line 472.
+481. on input line 481.
 Package pdftex.def Info: Requested size: 277.51894pt x 208.13919pt on input lin
-e 472.
-
+e 481.
+<../Results/OOthreeBodyEarthSunJupiter.png, id=308, 462.528pt x 346.896pt>
+File: ../Results/OOthreeBodyEarthSunJupiter.png Graphic file (type png)
+<use ../Results/OOthreeBodyEarthSunJupiter.png>
+Package pdftex.def Info: ../Results/OOthreeBodyEarthSunJupiter.png  used on inp
+ut line 491. on input line 491.
+Package pdftex.def Info: Requested size: 277.51894pt x 208.13919pt on input lin
+e 491.
+ [15 <../Results/vesc6betas.png>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 479.
+               Default added (so using `tbp') on input line 498.
 
-
-Overfull \hbox (5.41743pt too wide) in paragraph at lines 480--486
-[][]
- []
-
-[15 <../Results/SunEarthOONj5T1png.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 519--520
-
+[16 <../Results/SunEarthOONj5T1png.png> <../Results/OOthreeBodyEarthSunJupiter.
+png>]
+Overfull \hbox (7.5919pt too wide) in paragraph at lines 517--517
+[]\T1/lmr/bx/n/12 ----Solar Sys-tem:verifying in-tegrity of implementation---
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 521--522
+Underfull \hbox (badness 10000) in paragraph at lines 517--517
+
+ []
+
+<../Results/SolarSyst9BodiesNj5T1.png, id=325, 462.528pt x 346.896pt>
+File: ../Results/SolarSyst9BodiesNj5T1.png Graphic file (type png)
+<use ../Results/SolarSyst9BodiesNj5T1.png>
+Package pdftex.def Info: ../Results/SolarSyst9BodiesNj5T1.png  used on input li
+ne 521. on input line 521.
+Package pdftex.def Info: Requested size: 277.51894pt x 208.13919pt on input lin
+e 521.
+[17 <../Results/SolarSyst9BodiesNj5T1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 547--548
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 523--524
+Underfull \hbox (badness 10000) in paragraph at lines 549--550
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 525--526
+Underfull \hbox (badness 10000) in paragraph at lines 551--552
 
  []
 
-[16] [17] (P3_NO_JN.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 561.
- [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 561.
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--554
+
+ []
+
+[18] [19] (P3_NO_JN.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 589.
+ [20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 589.
  (P3_NO_JN.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 561.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 589.
 
 
  *File List*
@@ -1089,24 +1116,36 @@ P3_NO_JN.out
   mt-msb.cfg    2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
   uni-32.def    2013/05/13 UCS: Unicode data U+2000..U+20FF
 ../Results/twoBodyNOOplot1.png
+../Results/VescAllOnePlotnj5T10.png
 ../Results/vesc6betas.png
 ../Results/SunEarthOONj5T1png.png
+../Results/OOthreeBodyEarthSunJupiter.png
+../Results/SolarSyst9BodiesNj5T1.png
 P3_NO_JN.bbl
  ***********
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 561.
-Package rerunfilecheck Info: File `P3_NO_JN.out' has not changed.
-(rerunfilecheck)             Checksum: 63DA98E0B0ABD853352AC898E2B2BF71;2990.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 589.
+
+Package rerunfilecheck Warning: File `P3_NO_JN.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `P3_NO_JN.out':
+(rerunfilecheck)             Before: FCC5E9D2A0DAAF7DD7F56C979E4BB6CF;3049
+(rerunfilecheck)             After:  BDBFE022B9E329C2F496B6BF1BD1A9F6;3038.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 12518 strings out of 493312
- 179885 string characters out of 3144112
- 316747 words of memory out of 3000000
- 15589 multiletter control sequences out of 15000+200000
- 70965 words of font info for 122 fonts, out of 3000000 for 9000
+ 12550 strings out of 493312
+ 180697 string characters out of 3144112
+ 317025 words of memory out of 3000000
+ 15606 multiletter control sequences out of 15000+200000
+ 71214 words of font info for 125 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,48p,956b,479s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Johan/Miktex/fonts/enc/dvips/lm/lm-ec.enc}{C:/Johan/Miktex/fonts/enc/dvip
@@ -1121,9 +1160,9 @@ r5.pfb><C:/Johan/Miktex/fonts/type1/public/lm/lmr7.pfb><C:/Johan/Miktex/fonts/t
 ype1/public/lm/lmr9.pfb><C:/Johan/Miktex/fonts/type1/public/lm/lmri10.pfb><C:/J
 ohan/Miktex/fonts/type1/public/lm/lmri7.pfb><C:/Johan/Miktex/fonts/type1/public
 /lm/lmsy10.pfb><C:/Johan/Miktex/fonts/type1/public/lm/lmsy7.pfb>
-Output written on P3_NO_JN.pdf (18 pages, 464271 bytes).
+Output written on P3_NO_JN.pdf (20 pages, 557223 bytes).
 PDF statistics:
- 397 PDF objects out of 1000 (max. 8388607)
- 91 named destinations out of 1000 (max. 500000)
- 18248 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 422 PDF objects out of 1000 (max. 8388607)
+ 97 named destinations out of 1000 (max. 500000)
+ 18263 words of extra memory for PDF output out of 20736 (max. 10000000)
 

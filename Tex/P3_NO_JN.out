@@ -20,10 +20,10 @@
 \BOOKMARK [2][-]{subsection.3.2}{Escape velocity}{section.3}% 20
 \BOOKMARK [2][-]{subsection.3.3}{Effects of gravitational force}{section.3}% 21
 \BOOKMARK [2][-]{subsection.3.4}{Object Orientation: Verifying integrity of methods}{section.3}% 22
-\BOOKMARK [2][-]{subsection.3.5}{Multi Body: Verifying integrity of implementation }{section.3}% 23
-\BOOKMARK [2][-]{subsection.3.6}{Multi Body: The effects of another object on the Earth's trajectory}{section.3}% 24
-\BOOKMARK [2][-]{subsection.3.7}{Solar System:verifying integrity of implementation }{section.3}% 25
-\BOOKMARK [2][-]{subsection.3.8}{Effects of relativity}{section.3}% 26
+\BOOKMARK [2][-]{subsection.3.5}{Three Body system: Verifying integrity of implementation}{section.3}% 23
+\BOOKMARK [2][-]{subsection.3.6}{\204-Multi Body: The effects of another object on the Earth's trajectory\204}{section.3}% 24
+\BOOKMARK [2][-]{subsection.3.7}{\204-Solar System:verifying integrity of implementation\204 }{section.3}% 25
+\BOOKMARK [2][-]{subsection.3.8}{\204Effects of relativity\204}{section.3}% 26
 \BOOKMARK [1][-]{section.4}{Discussion of results}{}% 27
 \BOOKMARK [2][-]{subsection.4.1}{Initial implementation}{section.4}% 28
 \BOOKMARK [2][-]{subsection.4.2}{Escape velocity}{section.4}% 29
@@ -32,8 +32,8 @@
 \BOOKMARK [2][-]{subsection.4.5}{The three body system}{section.4}% 32
 \BOOKMARK [3][-]{subsubsection.4.5.1}{Integrity of methods}{subsection.4.5}% 33
 \BOOKMARK [3][-]{subsubsection.4.5.2}{Effects on Earth's trajectory}{subsection.4.5}% 34
-\BOOKMARK [2][-]{subsection.4.6}{Solar system}{section.4}% 35
+\BOOKMARK [2][-]{subsection.4.6}{\204Solar system\204}{section.4}% 35
 \BOOKMARK [3][-]{subsubsection.4.6.1}{Integrity of methods}{subsection.4.6}% 36
-\BOOKMARK [2][-]{subsection.4.7}{Effects of relativty}{section.4}% 37
+\BOOKMARK [2][-]{subsection.4.7}{\204Effects of relativty\204}{section.4}% 37
 \BOOKMARK [1][-]{section.5}{Conclusions}{}% 38
 \BOOKMARK [1][-]{section*.5}{References}{}% 39

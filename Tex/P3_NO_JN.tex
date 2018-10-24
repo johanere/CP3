@@ -374,7 +374,7 @@ Masses and velocities are also extracted from the HORIZONS system interface and 
 
 \subsection{Three body system}
 \label{sec:Modmultibody}
-The final step before simulating the Solar System with all planets, is to test the object oriented code using a three body system. This is carried out by adding the Sun, the Earth, and Jupiter to the system class, using HORIZONS system data as described above. The system is solved using the velocity Verlet function from the Solver class on a selection of $n$ \textbf{WHAT VALUES?}, and the stability of the solution is evaluated by conservation of angular momentum, which is established as a suitable stability measurement in the discussion of results section under \hyperref[subsec:Discofres:initimpl]{Inital implementation}. \newline
+The final step before simulating the Solar System with all planets, is to test the object oriented code using a three body system. This is carried out by adding the Sun, the Earth, and Jupiter to the system class, using HORIZONS system data as described above. The system is solved using the velocity Verlet function from the Solver class on a selection of $n$, and the stability of the solution is evaluated by conservation of angular momentum, which is established as a suitable stability measurement in the discussion of results section under \hyperref[subsec:Discofres:initimpl]{Inital implementation}. \newline
 
 After initial stability testing of the Sun-Earth-Jupiter system using the object oriented code, the mass of Jupiter, $M_J$ is increased. First by a factor of $10^1$, then by $10^3$. This is expected to have an effect on the trajectory of all three bodies; on the Sun - a pronounced trajectory, on Jupiter - a pronounced trajectory, and on the Earth - \textbf{SOMETHING??}. Especially in the $M_J=10^3 M_J$ case. First, stability tests are executed for each case, then plots are produced, visualizing the effect on the system.
   
@@ -449,14 +449,23 @@ $\epsilon_L$     & 0.00585689 & 0           & 0           & 0             & 0   
     
  
 \subsection{Escape velocity}
+Figure \ref{fig:esc_vel} shows the Earth's trajectory as a function of $v_0$, over $T=10$ and $n=10^5$. It is clear that for $v_0$ up to and including $8.28 AU/Yr$, the Earth enters what appears to be stable orbits around the Sun. For higher $v_0$'s it becomes hard to discern if escape velocity has indeed been achieved - or if the Earth has entered an orbit with a relatively large aphelion. More under of discussion of results. 
 
+\begin{figure}[!htb]
+        \centering 
+         \includegraphics[scale=.5]{../Results/VescAllOnePlotnj5T10.png} 
+        \caption{Plot of the Earth's trajectory as a function of $v_0$, over $T=10$ and $n=10^5$}
+        \label{fig:esc_vel}   
+\end{figure}  
 
-1.3 $(V_esc)$ Presenter plot med analytisk $v_esc.$ Deretter $v_esc$ ved trial and error. Kommenter forskjell (høyere eller lavere enn analytisk?)
 
 \subsection{Effects of gravitational force}
 Figure \ref{fig:vesc6betas} shows the effect on the Earth's trajectory when the gravitational force is modified with $\beta\in [2,3]$ as explained under Escape velocity and effects of the gravitational force in the Methods section. For each value of $\beta$ the Sun-Earth system is simulated, using $n=10^5$ and $v_0=2\pi +1$. The effects are quite clear: higher values of $\beta$ results in larger $r$. Some of the trajectories appear to be stable orbits, while higher values of $\beta$ possibly results in obtaining $v_{esc}$. More under discussion of results.
 
 
+Deviation from analytical $~10^{-2}$ by taking difference.
+Still, numerical value lower than analytical (expected), due to low N? Increasing N to 10000000 (two orders higher) shows no change,
+orbit still not closed.
 \begin{figure}[!htb]
         \centering 
          \includegraphics[scale=.5]{../Results/vesc6betas.png} 
@@ -474,14 +483,25 @@ Figure \ref{fig:twobodyplotOO} visualises the Sun-Earth system solved for $T=1$ 
         \label{fig:twobodyplotOO}   
 \end{figure}  
 
-\subsection{Multi Body: Verifying integrity of implementation }
+\subsection{Three Body system: Verifying integrity of implementation}
+Figure \ref{fig:twobodyplotOO} shows the Sun-Earth-Jupiter system using object oriented code with $n=10^5$ and $T=6 yrs$. It's clear that the orbits of both the Earth and Jupiter is elliptical. In addition, angular momentum was preserved within a reasonable margin. Examining table \ref{tab:ESJtable}, which displays $\epsilon_L$ as a function of $n$, it is  clear that $\epsilon_L$ is within $\sim 2\cdot 10^{-4}$, even for small values of $n$. For $n=10^5$, $\epsilon_L$ is $\sim 2 \cdot 10^{-7}$.
+
+\begin{figure}[!htb]
+        \centering 
+         \includegraphics[scale=.6]{../Results/OOthreeBodyEarthSunJupiter.png} 
+        \caption{Plot of the Sun-Earth-Jupiter system using object oriented code with $n=10^5$ and $T=6 yrs$},
+        \label{fig:twobodyplotOO}   
+\end{figure}  
+
+
 Table \ref{tab:ESJtable}
 \begin{table}[]
 \begin{tabular}{lllllll}
 $n=10^j$                                & $j=1$                  & $j=2$                  & $j=3$                  & $j=4$                  & $j=5$                 & $j=6$                 \\
-Velocity Verlet T=6                     &                        &                        &                        &                        &                       &                       \\
+Velocity Verlet                      &                        &                        &                        &                        &                       &                       \\
 $\epsilon_L$ & 1.9e-4 & 1.8e-05 & 1.8e-06 & 2.5e-07 & 2.1e-07 & 9.6e-08 \\
 \end{tabular}
+\caption{$\epsilon_L$ as a function of $n$ for the Sun-Earth-Jupiter system over $T=6yrs$}
 \label{tab:ESJtable}
 \end{table}
 
@@ -491,14 +511,22 @@ For T=12, total angulær moment holdes stabilt lenge, men
 feilen øker mot slutten av simulering. Holdes konstant for lavere T, f.eks 6 slik tabellen viser.
 2.1 - Plot ESJ oppå ES
     - For en N som tidligere har vært stabil - presenter momentumbevaring. Samme toleranse? Må vi øke N for samme stabilitet?
-\subsection{Multi Body: The effects of another object on the Earth's trajectory}
+\subsection{----Multi Body: The effects of another object on the Earth's trajectory---}
     - plot for jupmassse x10 og x1000
 
-\subsection{Solar System:verifying integrity of implementation }
-- Plot over solsystemet for ett år <- simuleringa fungerer som forventa
+\subsection{----Solar System:verifying integrity of implementation--- }
+Figure \ref{fig:ssplotT=1}
+\begin{figure}[!htb]
+        \centering 
+         \includegraphics[scale=.6]{../Results/SolarSyst9BodiesNj5T1.png} 
+        \caption{Plot of the Solar System with all planets includes over $T=1 yr$ and $n=10^5$}
+        \label{fig:ssplotT=1}   
+\end{figure}  
+
+
 - Stabilitetssjekk: Angmom bevart? 
 
-\subsection{Effects of relativity}
+\subsection{---Effects of relativity---}
 4. Kjør Sol (flytende sol) og merkur 
 - finn vinkel etter 100 år med newtonsk
 - finn vinkel etter 100 år med generell relativitet
@@ -526,31 +554,31 @@ Both energy and angular momentum is conserved for $n=10^5$ when using the Verlet
 
 Because $\epsilon_r$ is an unsuitable measurement when a multi body system is examined (due to complexity of analytical solution), conservation of angular momentum is instead defined as the stability measurement to be used for all other purposes in this project. It is however important to note that angular momentum is conserved when $\epsilon_r$ is $\sim 0.002$ - which may indicate that the instability threshold increases when measured through conservation of angular momentum. 
 
- 
 \subsection{Escape velocity}
-1.3 $(V_esc)$ Er det en sammenheng med hva vi så på energibevaring elns? 
+As described in the Results section, it is difficult to discern whether the Earth has in fact  acheived $v_{esc}$ or simply entered an orbit with a very large aphelion. However, since the system in question is isolated, and not limited in space - that is; the force from the Sun will always affect the Earth, no matter the distance - it is in fact impossible to ascertain a precise numerical $v_{esc}$. On the other hand, machine representation of the force would eventually lead to $|F_g|=0$. With this in mind, visual inspection of plot reveals that $ v_0=2\pi+2.6$ yields a trajectory that, for all practical purposes, results in the Earth leaving the Solar System. Therefore, numerical $v_{esc}$ is evaluated to $ 2pi+2.6 = 8.88319$. This deviates from the analytical solution by $~10^{-2}$.
+
 \subsection{Effects og gravitational force}
 As expected, increasing $\beta$'s increase $r$ over time. Although several values of $\beta$ appears to result in stable orbits at $r>1 AU$, higher values of $\beta$ may possibly result in obtaining $v_{esc}$. This project did not carry out evaluation an evaluation of the kinetic energy versus the potential gravitational energy in relation to the modified gravitational force, so no definite conclusions may be drawn on this subject. However, it is clear from the results that as $\beta \rightarrow 3$ the Earth \textit{approaches} escape velocity. 
 
 \subsection{Object Orientation: Verifying integrity of methods} 
-As shown in the results section, the object orientation of the code appears to have been successfully. However, the implementation was not tested in depth for run time, $\epsilon_r$, and $\epsilon_E$ - so there may have been some (smaller) deviations from the results produced by the non object oriented code that have not been measured. However, $\epsilon_L$ was measured, with a small ($3.8 \cot 10^6$) deviation from $0$. This deviation may be because the Sun was initialized with HORIZON system data, and not fixed at the origin. Despite the deviation in $\epsilon_L$, the object orientation is therefore concluded to be successful.
+As shown in the results section, the object orientation of the code appears to have been successfully. However, the implementation was not tested in depth for run time, $\epsilon_r$, and $\epsilon_E$ - so there may have been some (smaller) deviations from the results produced by the non object oriented code that have not been measured. However, $\epsilon_L$ was measured, with a small ($3.8 \cot 10^6$) deviation from $0$. This deviation may be because the Sun was initialized with HORIZON system data, and not fixed at the origin. Despite the deviation in $\epsilon_L$, the object orientation is therefore said to be successful.
 
 \subsection{The three body system}
 \label{subsec:Discofres:3B}
-As the data from NASA uses a barycenter that includes objects that are not in use in this project, the barycenter may be 
-barycenter - include bodies not used in our simulating - may have effects on solution.
+The initial test, ie. the plot, showing the Sun-Earth-Jupiter system, shows elliptical orbits as expected. By also taking the fact that angular momentum was conserved into account, the three body system implementation appears to be successful. Examination of table \ref{tab:ESJtable} further supports this. The deviation seen in $\epsilon_L$ both in the Sun-Earth-Jupiter simulation, and previous simulations utilizing the object oriented code may be a result of using HORIZON system data; their barycenter (origin) is presumably the mass center of a more populated system than the one used in this project. This means that the initial values used in this project are not necessarily accurate. On the other hand, the (small) deviations in $\epsilon_L$ may also very well stem from inaccurate algorithm implementation.
+
 \subsubsection{Integrity of methods}
 -Verlet funker med 3 bodies
 - se at jordas bane (og solas) blir i økende grav påvirka.
 \subsubsection{Effects on Earth's trajectory}
 
-\subsection{Solar system}
+\subsection{---Solar system---}
 \subsubsection{Integrity of methods}
 - Ser plottet ut som forventa? Noen planeter ikke fullført bane -> de bruker lengre tid enn 1 yr!
 - Stabilitetssjekk: Angmom bevart ved en viss N med lik nøyaktighet som før?
 
 - sucessfully simulated a simplified version of the solar system using all planets and newtonian gravity - not accounted for relativty and other astronomical objects 
-\subsection{Effects of relativty}
+\subsection{---Effects of relativty---}
 beskriv avviket på vinkel. Er det viktig å ta med generell relativitet?
 \section{Conclusions}
 
