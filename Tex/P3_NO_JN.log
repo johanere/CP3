@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  24 OCT 2018 19:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  24 OCT 2018 20:14
 entering extended mode
 **./P3_NO_JN.tex
 (P3_NO_JN.tex
@@ -805,122 +805,154 @@ Underfull \hbox (badness 10000) in paragraph at lines 304--305
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 310--311
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--313
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 314--315
+Underfull \hbox (badness 10000) in paragraph at lines 315--316
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 330--331
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--333
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--338
+LaTeX Warning: Hyper reference `subsec:Init_implm' on page 8 undefined on input
+ line 336.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 344--345
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--357
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 358--359
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 360--361
+Underfull \hbox (badness 10000) in paragraph at lines 361--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 362--363
+Underfull \hbox (badness 10000) in paragraph at lines 363--364
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 364--365
+Underfull \hbox (badness 10000) in paragraph at lines 365--366
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--371
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--377
+Underfull \hbox (badness 10000) in paragraph at lines 377--378
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 387--388
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 396--397
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 415--416
+Underfull \hbox (badness 10000) in paragraph at lines 416--417
 
  []
 
-<../Results/twoBodyNOOplot1.png, id=271, 578.16pt x 578.16pt>
+<../Results/twoBodyNOOplot1.png, id=273, 578.16pt x 578.16pt>
 File: ../Results/twoBodyNOOplot1.png Graphic file (type png)
 <use ../Results/twoBodyNOOplot1.png>
-Package pdftex.def Info: ../Results/twoBodyNOOplot1.png  used on input line 419
-. on input line 419.
+Package pdftex.def Info: ../Results/twoBodyNOOplot1.png  used on input line 420
+. on input line 420.
 Package pdftex.def Info: Requested size: 346.89867pt x 346.89867pt on input lin
-e 419.
+e 420.
 
-Overfull \hbox (1.89867pt too wide) in paragraph at lines 419--420
+Overfull \hbox (1.89867pt too wide) in paragraph at lines 420--421
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 424--425
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
 
  []
 
 
-Overfull \hbox (109.30618pt too wide) in paragraph at lines 432--445
+Underfull \hbox (badness 10000) in paragraph at lines 427--428
+
+ []
+
+
+Overfull \hbox (109.30618pt too wide) in paragraph at lines 433--446
 [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[12] [13 <../Results/twoBodyNOOplot1.png>] [14] [15] (P3_NO_JN.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 533.
- [16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 533.
+[12] [13 <../Results/twoBodyNOOplot1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 492--493
 
-(P3_NO_JN.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 533.
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 494--495
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--497
+
+ []
+
+! Undefined control sequence.
+l.498 ...s better suited for this project. \newlin
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[15] (P3_NO_JN.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 531.
+ [16]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 531.
+ (P3_NO_JN.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 531.
 
 
  *File List*
@@ -1034,25 +1066,19 @@ P3_NO_JN.out
 P3_NO_JN.bbl
  ***********
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 533.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 531.
+Package rerunfilecheck Info: File `P3_NO_JN.out' has not changed.
+(rerunfilecheck)             Checksum: A9C8B69E05501509815067FC39C58D9F;2889.
 
-Package rerunfilecheck Warning: File `P3_NO_JN.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `P3_NO_JN.out':
-(rerunfilecheck)             Before: B8FA017410F3AF551D7369AF840F7FB5;2794
-(rerunfilecheck)             After:  218CF223CBC581599E6FBC63D96A7ADA;2889.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 12481 strings out of 493312
- 179237 string characters out of 3144112
- 315245 words of memory out of 3000000
- 15573 multiletter control sequences out of 15000+200000
- 70384 words of font info for 115 fonts, out of 3000000 for 9000
+ 12489 strings out of 493312
+ 179340 string characters out of 3144112
+ 316714 words of memory out of 3000000
+ 15575 multiletter control sequences out of 15000+200000
+ 70633 words of font info for 118 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,48p,956b,479s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Johan/Miktex/fonts/enc/dvips/lm/lm-ec.enc}{C:/Johan/Miktex/fonts/enc/dvip
@@ -1067,9 +1093,9 @@ r5.pfb><C:/Johan/Miktex/fonts/type1/public/lm/lmr7.pfb><C:/Johan/Miktex/fonts/t
 ype1/public/lm/lmr9.pfb><C:/Johan/Miktex/fonts/type1/public/lm/lmri10.pfb><C:/J
 ohan/Miktex/fonts/type1/public/lm/lmri7.pfb><C:/Johan/Miktex/fonts/type1/public
 /lm/lmsy10.pfb><C:/Johan/Miktex/fonts/type1/public/lm/lmsy7.pfb>
-Output written on P3_NO_JN.pdf (16 pages, 373948 bytes).
+Output written on P3_NO_JN.pdf (16 pages, 375705 bytes).
 PDF statistics:
- 370 PDF objects out of 1000 (max. 8388607)
+ 375 PDF objects out of 1000 (max. 8388607)
  86 named destinations out of 1000 (max. 500000)
- 18222 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 18230 words of extra memory for PDF output out of 20736 (max. 10000000)
 

@@ -17,9 +17,9 @@
 \BOOKMARK [2][-]{subsection.2.12}{Effects of relativity}{section.2}% 17
 \BOOKMARK [1][-]{section.3}{Results}{}% 18
 \BOOKMARK [2][-]{subsection.3.1}{Testing of initial implementation}{section.3}% 19
-\BOOKMARK [2][-]{subsection.3.2}{Object Orientation: verifying integrity of methods}{section.3}% 20
-\BOOKMARK [2][-]{subsection.3.3}{Escape velocity}{section.3}% 21
-\BOOKMARK [2][-]{subsection.3.4}{Effects of gravitational force}{section.3}% 22
+\BOOKMARK [2][-]{subsection.3.2}{Escape velocity}{section.3}% 20
+\BOOKMARK [2][-]{subsection.3.3}{Effects of gravitational force}{section.3}% 21
+\BOOKMARK [2][-]{subsection.3.4}{Object Orientation: verifying integrity of methods}{section.3}% 22
 \BOOKMARK [2][-]{subsection.3.5}{Multi Body: Verifying integrity of implementation }{section.3}% 23
 \BOOKMARK [2][-]{subsection.3.6}{Multi Body: The effects of another object on the Earth's trajectory}{section.3}% 24
 \BOOKMARK [2][-]{subsection.3.7}{Solar System:verifying integrity of implementation }{section.3}% 25
